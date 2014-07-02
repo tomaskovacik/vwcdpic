@@ -1,0 +1,5 @@
+/* buttons */
+#addressbook-switch-button {
+  list-style-image: url("chrome://messenger/skin/icons/mail-toolbar-small.png");
+  -moz-image-region: rect(0px 48px 16px 32px);
+}

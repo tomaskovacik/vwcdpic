@@ -1,0 +1,2 @@
+content abimtb chrome/
+overlay	chrome://messenger/content/messenger.xul chrome://abimtb/content/thunderbirdOverlay.xul
