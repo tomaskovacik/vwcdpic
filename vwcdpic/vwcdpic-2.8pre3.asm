@@ -1458,7 +1458,7 @@ Do_CD4:
 	movwf	disc			; set CD 4
 
 	IFDEF ARCHOS_SUPPORT
-		movlw	low archosLIST3
+		movlw	low archosLIST4
 		call	EnqueueString
 	ENDIF
 
@@ -1472,7 +1472,7 @@ Do_CD5:
 	movwf	disc			; set CD 5
 
 	IFDEF ARCHOS_SUPPORT
-		movlw	low archosLIST3
+		movlw	low archosLIST5
 		call	EnqueueString
 	ENDIF
 
@@ -1486,7 +1486,7 @@ Do_CD6:
 	movwf	disc			; set CD 6
 
 	IFDEF ARCHOS_SUPPORT
-		movlw	low archosLIST3
+		movlw	low archosLIST6
 		call	EnqueueString
 	ENDIF
 
