@@ -8,6 +8,7 @@ notes:
 GND: 8
 
 |  | v2 | V3 |
+|----|----|----|
 | CLK: | 2 | 7 |
 | DataIn: | 3 | 6 |
 | DataOut: | 5 | 6 |
