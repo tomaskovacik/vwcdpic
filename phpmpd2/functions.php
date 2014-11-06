@@ -372,6 +372,7 @@ function credit($ammount="0"){
 	case "0":return $credit;break;
 	default: $credit=$credit+$ammount;
 	}
+	if ($credit<0) $credit=0; //no negative credit
 	if (file_put_contents($configuration["credit_file"], $credit)) {
 		return true;
 	} else {
