@@ -366,13 +366,13 @@ function get_songinfo_first ($info, $sort_history, $depth) {
 	}
 }
 function credit($ammount="0"){
-	$file = "credit.txt";
-	$credit = file_get_contents($file);
+	global $configuration;
+	$credit = file_get_contents($configuration["credit_file"]);
 	switch ($ammount){
 	case "0":return $credit;break;
 	default: $credit=$credit+$ammount;
 	}
-	if (file_put_contents($file, $credit)) {
+	if (file_put_contents($configuration["credit_file"], $credit)) {
 		return true;
 	} else {
 		return false;

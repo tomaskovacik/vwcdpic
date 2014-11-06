@@ -102,7 +102,7 @@ if(isset($connection) && is_resource($connection)) {
 		case "add":
 			$command = $_REQUEST["command"];
 			if(array_key_exists("arg", $_REQUEST) && strlen($_REQUEST["arg"])>0) $command.=" \"".$_REQUEST["arg"]."\"";
-			if (credit("-1") === true && do_mpd_command($connection, $command) === true){
+			if (credit()>0 && credit("-1") === true && do_mpd_command($connection, $command) === true){
 				$command_successful = true;
 			} else {
 				$command_successful = false;

@@ -67,6 +67,8 @@ $configuration = array(
 	"display_volume" => false, //Set to true to show the volume slider, if combined_slider != true.
 	"display_crossfade" => false, //Set to true to show the volume slider, if combined_slider != true.
 	"slider_width" => 240, //Width of the volume and crossfade sliders.
-	"graphical_sliders" => false
+	"graphical_sliders" => false,
+	"credit_file" => "credit.txt",
+	"error_msg" => false
 )
 ?>

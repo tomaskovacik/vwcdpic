@@ -22,7 +22,7 @@ case "stop":
 //echo "]</small></h2>";
 echo "</span><br /><span class=\"playing\">";
 if((array_key_exists("command", $_REQUEST) && $_REQUEST["command"])) {
-	if($command_successful !== true)
+	if($command_successful !== true && $configuration["error_msg"])
 		echo "Error on command ".$_REQUEST["command"]." with arguments: ".$_REQUEST["arg"]."<br />\n";
 }
 

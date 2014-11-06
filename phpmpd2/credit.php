@@ -1,4 +1,5 @@
-<?
+<?php
+include ('config.php');
 include ('functions.php');
 if (array_key_exists("ammount", $_REQUEST)) {
 credit($_REQUEST["ammount"]);
