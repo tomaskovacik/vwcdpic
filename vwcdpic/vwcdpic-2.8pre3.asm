@@ -1228,9 +1228,10 @@ Do_PREVCD:
 
 		movlw	0xBF			; have we gone below CD 1?
 		subwf	disc, w
-		movlw	0xBE
+		movlw	0xBF - 6                ; switch to CD 6 after CD 1
+		;movlw   0xBE                   ; or set back to CD 1
 		btfsc	STATUS, C
-		movwf	disc			; yes, set back to CD 1
+		movwf	disc
 
 	IFDEF ARCHOS_SUPPORT
 		movlw	low archosSTOP
