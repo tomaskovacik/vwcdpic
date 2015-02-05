@@ -323,14 +323,14 @@
 ;--------------------------------------------------------------------------
 ; PIC12F629/PIC12F675 Connections
 ;--------------------------------------------------------------------------
-; PIC GP5 -> VW Pin 2 Clock  to Head Unit
-; PIC GP4 -> VW Pin 1 Data   to Head Unit
-; PIC GP2 <- VW Pin 4 Data from Head Unit
+; PIC GP5(pin 2) -> VW Pin 2 Clock  to Head Unit
+; PIC GP4(pin 4) -> VW Pin 1 Data   to Head Unit
+; PIC GP2(pin 5) <- VW Pin 4 Data from Head Unit
 ; Make sure PIC and VW Head Unit have common GND.
 ; 
-; PIC GP0 -> PJRC MP3 Player RX (19.2Kbps serial, working)
-; PIC GP1 -> Archos Jukebox RX (9600bps serial with weak pull-up)
-; PIC GP1 -> 3G iPod Serial RX (19.2Kbps serial with weak pull-up)
+; PIC GP0(pin 7) -> PJRC MP3 Player RX (19.2Kbps serial, working)
+; PIC GP1(pin 6) -> Archos Jukebox RX (9600bps serial with weak pull-up,8bits, 1stop bit, no parity)
+; PIC GP1(pin 6) -> 3G iPod Serial RX (19.2Kbps serial with weak pull-up)
 ; Make sure PIC and MP3 Player have common GND.
 ;--------------------------------------------------------------------------
 
