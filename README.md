@@ -11,3 +11,4 @@ bash script, etc ...
 - rhythmbox_export_podcast.sh - bash script to export rhythbox podcast as OPML
 - ulozto.sh -bash script to upload file to uloz.to, usage: ./ulozto.sh file username password
 - phpMp2 version 0.11.0 with credit support
+- vwcdpic - copy of vwcdpic devel site
