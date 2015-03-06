@@ -20,3 +20,4 @@ http://www.micahcarrick.com/pic-programming-linux.html
 
 for i in `ls *.asm|cut -d\. -f2`;do gpasm vwcdpic-2.$i.asm;done
 
+v2 now better handled with audi concert head unit (I hope, untested)
