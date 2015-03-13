@@ -1,0 +1,14 @@
+#labels Phase-Design
+enable [AlbumStartDateInterval] and [AlbumEndDateInterval] 
+
+*is in:*
+
+[CreateAlbum] [EmptyAlbum] [SetAlbumUploading]
+
+*example:*
+
+{{{
+<manualDateInterval>1</manualDateInterval>
+<startDateInterval>2010-05-30 00:00:00</startDateInterval>
+<endDateInterval>2010-05-30 00:00:00</endDateInterval>
+}}}

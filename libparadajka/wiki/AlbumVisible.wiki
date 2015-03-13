@@ -1,0 +1,14 @@
+#labels Phase-Design
+set visibility of album to public aka private/public
+
+private/hidden album cannot by included in special categories (like competitions etc...)
+
+*value:*
+
+0 = invisible/private album (visible only to owner after login)
+
+1 = visible/public album (visible to everyone)
+
+*is in:*
+
+[CreateAlbum] [EmptyAlbum] [SetAlbumUploading]

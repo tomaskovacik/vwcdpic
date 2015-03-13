@@ -1,0 +1,6 @@
+#labels Phase-Design
+ID of album from responce of [CreateAlbum]
+
+*is in:*
+
+[SetAlbumUploading] [EmptyAlbum]

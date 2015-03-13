@@ -1,0 +1,20 @@
+#labels Phase-Design
+*variables:*
+
+[username]
+
+[password]
+
+[albumID]
+
+*Request type:* POST
+
+*URL:* /client14/command.php
+
+*parameters:* command=DeleteAlbum&userName=*{username}*&userPass=*{password}*&albumID=*{albumID}*&eof=1
+
+*responce:*
+{{{
+<result>OK</result>
+<value>Album s ID 3476020 bylo smazano. <usedSize></usedSize></value>
+}}}

@@ -1,0 +1,97 @@
+== Get information about newest files on server ==
+
+*request type:* POST
+
+*URL:* /stahnout/update/files.dat 
+
+*responce:*
+{{{
+<?xml version="1.0" encoding="utf-8"?>
+<files>
+  <file>
+    <name>rajce.ver</name>
+    <nameZip>rajce.zip</nameZip>
+    <version>181</version>
+    <sizeZip>694586</sizeZip>
+    <autoExtract>false</autoExtract>
+  </file>
+  <file>
+    <name>updater.ver</name>
+    <nameZip>updater.zip</nameZip>
+    <version>4</version>
+    <sizeZip>138114</sizeZip>
+    <autoExtract>true</autoExtract>
+  </file>
+  <file>
+    <name>FreeImage.ver</name>
+    <nameZip>FreeImage.zip</nameZip>
+    <version>3131</version>
+    <sizeZip>973251</sizeZip>
+    <autoExtract>false</autoExtract>
+  </file>
+  <file>
+    <name>FreeImagePlus.ver</name>
+    <nameZip>FreeImagePlus.zip</nameZip>
+    <version>3131</version>
+    <sizeZip>42548</sizeZip>
+    <autoExtract>false</autoExtract>
+  </file>
+  <file>
+    <name>libcurl.ver</name>
+    <nameZip>libcurl.zip</nameZip>
+    <version>71907</version>
+    <sizeZip>124113</sizeZip>
+    <autoExtract>false</autoExtract>
+  </file>
+  <file>
+    <name>libtheora.ver</name>
+    <nameZip>libtheora.zip</nameZip>
+    <version>10101</version>
+    <sizeZip>202406</sizeZip>
+    <autoExtract>true</autoExtract>
+    <quietUpdate>true</quietUpdate>
+  </file>
+  <file>
+    <name>libogg.ver</name>
+    <nameZip>libogg.zip</nameZip>
+    <version>10200</version>
+    <sizeZip>25492</sizeZip>
+    <autoExtract>true</autoExtract>
+    <quietUpdate>true</quietUpdate>
+  </file>
+  <file>
+    <name>libx264.ver</name>
+    <nameZip>libx264.zip</nameZip>
+    <version>92</version>
+    <sizeZip>315164</sizeZip>
+    <autoExtract>true</autoExtract>
+    <quietUpdate>true</quietUpdate>
+  </file>
+  <file>
+    <name>ffmpeg.ver</name>
+    <nameZip>ffmpeg.zip</nameZip>
+    <version>100524</version>
+    <sizeZip>2958070</sizeZip>
+    <autoExtract>true</autoExtract>
+    <quietUpdate>true</quietUpdate>
+  </file>
+  <file>
+    <name>SDL.ver</name>
+    <nameZip>SDL.zip</nameZip>
+    <version>10214</version>
+    <sizeZip>157183</sizeZip>
+    <autoExtract>true</autoExtract>
+    <quietUpdate>true</quietUpdate>
+  </file>
+  <file>
+    <name>ffplay.ver</name>
+    <nameZip>ffplay.zip</nameZip>
+    <version>100524</version>
+    <sizeZip>45878</sizeZip>
+    <autoExtract>true</autoExtract>
+    <quietUpdate>true</quietUpdate>
+  </file>
+</files>
+}}}
+
+*we need:*    {{{<version>*181*</version>}}}   ->> *{version}*

@@ -1,0 +1,88 @@
+#labels Phase-Design
+*variables:*
+
+[username]
+
+[password]
+
+[AlbumID]
+
+[AlbumName]
+
+[AlbumDescription]
+
+[AlbumLocalPath]
+
+[AlbumPhotoCount]
+
+[AlbumVisible]
+
+[AlbumSecure]
+
+[AlbumSecureName]
+
+[AlbumSecurePassword]
+
+[AlbumCoverPicture]
+
+[AlbumCategory]
+
+[AlbumManualAlbumDateIterval]
+
+[AlbumStartDateInterval]
+
+[AlbumEndDateInterval]
+
+[PhotosXml]
+
+*request type:* POST
+
+*URL:* /client14/command.php 
+
+*parameters:*
+command=EmptyAlbum&userName=*{username}*&userPass=*{password}*&albumID=*{albumID}*&eof=1&albumSetting=
+{{{
+<album>
+  <albumID>-1</albumID>
+  <name>{AlbumName}</name>
+  <desc>{AlbumDescription}</desc>
+  <create></create>
+  <expiration></expiration>
+  <autorID></autorID>
+  <size></size>
+  <localPath>{AlbumLocalPath}</localPath>
+  <photoCount>{AlbumPhotoCount}</photoCount>
+  <serverDir>{AlbumName}</serverDir>
+  <maxSizeImage>1200</maxSizeImage>
+  <maxSizeThumb>100</maxSizeThumb>
+  <albumVisible>{AlbumVisible}</albumVisible>
+  <albumSecure>{AlbumSecure}</albumSecure>
+  <albumSecureName>{AlbumSecureName}</albumSecureName>
+  <albumSecurePass>{AlbumSecurePassword}</albumSecurePass>
+  <thumbName>{AlbumCoverPicture}</thumbName>
+  <photosUrl></photosUrl>
+  <albumCategory>{AlbumCategory}</albumCategory>
+  <albumTags></albumTags>
+  <manualDateInterval>{AlbumManualAlbumDateIterval}</manualDateInterval>
+  <startDateInterval>{AlbumStartDateInterval}</startDateInterval>
+  <endDateInterval>{AlbumEndDateInterval}</endDateInterval>
+  <photos>
+    {PhotosXml}
+  </photos>
+</album>
+}}}
+
+*responce:*
+{{{
+<result>OK</result><value>Album s ID=3476086, serverDir="", albumDesc="" bylo vy...i...t...no. <usedSize></usedSize></value>
+}}}
+
+*example:*
+{{{
+command=EmptyAlbum&userName={username}&userPass={md5(password)}&albumID=3476086&albumSetting=<album>	<albumID>-1</albumID>	<name>tmp_test</name>	<desc>popis albumu</desc>	<create></create>	<expiration></expiration>	<autorID></autorID>	<size></size>	<localPath>Z:/home/nail/src/rajce/tmp_test</localPath>	<photoCount>4</photoCount>	<serverDir>tmp_test</serverDir>	<maxSizeImage>1200</maxSizeImage>	<maxSizeThumb>100</maxSizeThumb>	<albumVisible>0</albumVisible>	<albumSecure>1</albumSecure>	<albumSecureName>login</albumSecureName>	<albumSecurePass>password</albumSecurePass>	<thumbName>album_cover.jpg</thumbName>	<photosUrl></photosUrl>	<albumCategory>1</albumCategory>	<albumTags></albumTags>	<manualDateInterval>1</manualDateInterval>	<startDateInterval>2010-05-30 00:00:00</startDateInterval>	<endDateInterval>2010-05-30 00:00:00</endDateInterval><photos>
+<photo>	<photoID>-1</photoID>	<name>album_cover</name>	<desc>popis fotky uvodni fotka</desc>	<fileName>album_cover.jpg</fileName>	<autorID></autorID>	<fileSize>0</fileSize>	<fileSizeOriginal>0</fileSizeOriginal>	<width>0</width>	<height>0</height>	<index>1</index>	<exif><CameraModel>Canon EOS 40D</CameraModel><CameraMake>Canon</CameraMake><DateTime>2008-09-20 20:28:35</DateTime><Version>0221</Version><SourceWidth>427</SourceWidth><SourceHeight>640</SourceHeight><Orientation>1</Orientation><FlashUsed>9</FlashUsed><FocalLength>38.0</FocalLength><ExposureTime>0.005000</ExposureTime><ApertureFNumber>4.0</ApertureFNumber><ISO>800</ISO><ExposureProgram>1</ExposureProgram></exif>	<GPS></GPS>	<public>1</public>	<rotate>0</rotate>	<OriginalCode>0</OriginalCode>	<fileFullName>Z:/home/nail/src/rajce/tmp_test/album_cover.jpg</fileFullName>	<type>photo</type>	<isVideo>0</isVideo>	<isHdPhoto>0</isHdPhoto></photo>
+<photo>	<photoID>-1</photoID>	<name>full_exif</name>	<desc>popis fotky full exif</desc>	<fileName>full_exif.jpg</fileName>	<autorID></autorID>	<fileSize>0</fileSize>	<fileSizeOriginal>0</fileSizeOriginal>	<width>0</width>	<height>0</height>	<index>2</index>	<exif><CameraModel>Canon EOS 40D</CameraModel><CameraMake>Canon</CameraMake><DateTime>2008-09-20 20:28:35</DateTime><Version>0221</Version><SourceWidth>427</SourceWidth><SourceHeight>640</SourceHeight><Orientation>1</Orientation><FlashUsed>9</FlashUsed><FocalLength>38.0</FocalLength><ExposureTime>0.005000</ExposureTime><ApertureFNumber>4.0</ApertureFNumber><ISO>800</ISO><ExposureProgram>1</ExposureProgram></exif>	<GPS></GPS>	<public>1</public>	<rotate>0</rotate>	<OriginalCode>0</OriginalCode>	<fileFullName>Z:/home/nail/src/rajce/tmp_test/full_exif.jpg</fileFullName>	<type>photo</type>	<isVideo>0</isVideo>	<isHdPhoto>0</isHdPhoto></photo>
+<photo>	<photoID>-1</photoID>	<name>rotovane_vlavo</name>	<desc>popis foky rotovanie vlavo</desc>	<fileName>rotovane_vlavo.jpg</fileName>	<autorID></autorID>	<fileSize>0</fileSize>	<fileSizeOriginal>0</fileSizeOriginal>	<width>0</width>	<height>0</height>	<index>3</index>	<exif><CameraModel>Canon EOS 40D</CameraModel><CameraMake>Canon</CameraMake><DateTime>2008-09-20 20:28:35</DateTime><Version>0221</Version><SourceWidth>427</SourceWidth><SourceHeight>640</SourceHeight><Orientation>1</Orientation><FlashUsed>9</FlashUsed><FocalLength>38.0</FocalLength><ExposureTime>0.005000</ExposureTime><ApertureFNumber>4.0</ApertureFNumber><ISO>800</ISO><ExposureProgram>1</ExposureProgram></exif>	<GPS></GPS>	<public>1</public>	<rotate>3</rotate>	<OriginalCode>0</OriginalCode>	<fileFullName>Z:/home/nail/src/rajce/tmp_test/rotovane_vlavo.jpg</fileFullName>	<type>photo</type>	<isVideo>0</isVideo>	<isHdPhoto>0</isHdPhoto></photo>
+<photo>	<photoID>-1</photoID>	<name>rotovane_vpravo</name>	<desc>popis fotky rotovanie vpravo</desc>	<fileName>rotovane_vpravo.jpg</fileName>	<autorID></autorID>	<fileSize>0</fileSize>	<fileSizeOriginal>0</fileSizeOriginal>	<width>0</width>	<height>0</height>	<index>4</index>	<exif><CameraModel>Canon EOS 40D</CameraModel><CameraMake>Canon</CameraMake><DateTime>2008-09-20 20:28:35</DateTime><Version>0221</Version><SourceWidth>427</SourceWidth><SourceHeight>640</SourceHeight><Orientation>1</Orientation><FlashUsed>9</FlashUsed><FocalLength>38.0</FocalLength><ExposureTime>0.005000</ExposureTime><ApertureFNumber>4.0</ApertureFNumber><ISO>800</ISO><ExposureProgram>1</ExposureProgram></exif>	<GPS></GPS>	<public>1</public>	<rotate>1</rotate>	<OriginalCode>0</OriginalCode>	<fileFullName>Z:/home/nail/src/rajce/tmp_test/rotovane_vpravo.jpg</fileFullName>	<type>photo</type>	<isVideo>0</isVideo>	<isHdPhoto>0</isHdPhoto></photo>
+</photos></album>&eof=1
+}}}

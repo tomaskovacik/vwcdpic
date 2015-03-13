@@ -1,0 +1,6 @@
+#labels Phase-Design
+input from User or preset: directory from which photos are uploaded
+
+*is in:*
+
+[CreateAlbum] [EmptyAlbum] [SetAlbumUploading]

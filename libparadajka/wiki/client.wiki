@@ -1,0 +1,13 @@
+#labels Phase-Design
+==client.php==
+
+(ping?)
+
+*request type* GET
+
+*URL:* /test_connection/client.php?clientName=rajce%20pruvodce&clientVersion=57
+
+*responce:* 
+{{{
+<result>OK</result><value>rajce.net</value>
+}}}

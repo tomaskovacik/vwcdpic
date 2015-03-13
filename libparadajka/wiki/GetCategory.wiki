@@ -1,0 +1,114 @@
+#labels Phase-Design
+== Get photo categories from server ==
+
+*request type:* POST
+
+*URL:* /client14/command.php
+ 
+*parameters:* command=GetCategory&userName=*{username}*&userPass=*{password}*&userID=*{UserID}*&userLang=*{lan}*&eof=1
+
+*responce:* (is in cp1250)
+{{{
+<result>OK</result>
+<value>
+<category><index>0</index><name><žádná> zadejte prosím kategorie</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>0</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>0</sendHiRes></category>
+<category><index>105</index><name>*moje_fotozprávy</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>1</needInfo><url>http://www.rajce.idnes.cz/noviny</url><sendOriginal>0</sendOriginal><sendHiRes>1</sendHiRes><caption>Více informací</caption>
+<subCategories>
+<subCategory>sport</subCategory>
+<subCategory>kultura</subCategory>
+<subCategory>ostatní</subCategory>
+</subCategories>
+</category>
+<category><index>1</index><name>architektura</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>0</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>0</sendHiRes></category>
+<category><index>2</index><name>auta</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>0</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>0</sendHiRes></category>
+<category><index>3</index><name>cestování</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>0</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>0</sendHiRes></category>
+<category><index>4</index><name>děti</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>0</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>0</sendHiRes></category>
+<category><index>5</index><name>doma</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>0</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>0</sendHiRes></category>
+<category><index>6</index><name>dokumenty</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>0</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>0</sendHiRes></category>
+<category><index>7</index><name>klasická-fotografie</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>0</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>0</sendHiRes></category>
+<category><index>8</index><name>koníčky</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>0</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>0</sendHiRes></category>
+<category><index>9</index><name>krajina</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>0</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>0</sendHiRes></category>
+<category><index>10</index><name>kultura</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>0</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>0</sendHiRes></category>
+<category><index>11</index><name>lidé</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>0</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>0</sendHiRes></category>
+<category><index>12</index><name>makro</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>0</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>0</sendHiRes></category>
+<category><index>13</index><name>města</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>0</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>0</sendHiRes></category>
+<category><index>14</index><name>oslavy</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>0</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>0</sendHiRes></category>
+<category><index>15</index><name>ostatní</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>0</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>0</sendHiRes></category>
+<category><index>16</index><name>práce</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>0</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>0</sendHiRes></category>
+<category><index>17</index><name>příroda</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>0</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>0</sendHiRes></category>
+<category><index>18</index><name>rodina-přátelé</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>0</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>0</sendHiRes></category>
+<category><index>19</index><name>sport</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>0</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>0</sendHiRes></category>
+<category><index>20</index><name>širokoúhlé</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>0</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>0</sendHiRes></category>
+<category><index>21</index><name>události</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>0</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>0</sendHiRes></category>
+<category><index>22</index><name>umělecké</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>0</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>0</sendHiRes></category>
+<category><index>23</index><name>vesnice</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>0</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>0</sendHiRes></category>
+<category><index>24</index><name>zábava</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>0</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>0</sendHiRes></category>
+<category><index>25</index><name>země</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>0</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>0</sendHiRes></category>
+<category><index>26</index><name>zvířata</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>0</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>0</sendHiRes></category>
+<category><index>108</index><name>*soutěž:_Plzeň_2015</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>1</needInfo><url>http://www.rajce.idnes.cz/plzen2015</url><sendOriginal>1</sendOriginal><sendHiRes>1</sendHiRes><caption>Název</caption><description>Popis</description></category>
+<category><index>109</index><name>Plzeň_očima_umění_a_technologie.</name><parentID>108</parentID><partnerID>0</partnerID><needInfo>1</needInfo><url>http://www.rajce.idnes.cz/plzen2015</url><sendOriginal>1</sendOriginal><sendHiRes>1</sendHiRes><caption>Název</caption><description>Popis</description></category>
+<category><index>110</index><name>Plzeň_očima_příběhů_a_zdrojů.</name><parentID>108</parentID><partnerID>0</partnerID><needInfo>1</needInfo><url>http://www.rajce.idnes.cz/plzen2015</url><sendOriginal>1</sendOriginal><sendHiRes>1</sendHiRes><caption>Název</caption><description>Popis</description></category>
+<category><index>111</index><name>Plzeň_očima_tranzitu_a_minorit.</name><parentID>108</parentID><partnerID>0</partnerID><needInfo>1</needInfo><url>http://www.rajce.idnes.cz/plzen2015</url><sendOriginal>1</sendOriginal><sendHiRes>1</sendHiRes><caption>Název</caption><description>Popis</description></category>
+<category><index>112</index><name>Plzeň_očima_vztahů_a_citů.</name><parentID>108</parentID><partnerID>0</partnerID><needInfo>1</needInfo><url>http://www.rajce.idnes.cz/plzen2015</url><sendOriginal>1</sendOriginal><sendHiRes>1</sendHiRes><caption>Název</caption><description>Popis</description></category>
+<category><index>128</index><name>*soutěž:_nejkrásnější_zahrada</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>1</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>1</sendHiRes><caption>Název</caption><description>Popis</description></category>
+<category><index>129</index><name>*soutěž:_nejlepší_zlepšovák</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>1</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>1</sendHiRes><caption>Název</caption><description>Popis</description></category>
+<category><index>130</index><name>*soutěž:_nejhezčí_zahradní_koutek</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>1</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>1</sendHiRes><caption>Název</caption><description>Popis</description></category>
+<category><index>131</index><name>*soutěž:_Life_in_Line_2010</name><parentID>0</parentID><partnerID>0</partnerID><needInfo>1</needInfo><url></url><sendOriginal>0</sendOriginal><sendHiRes>1</sendHiRes><caption>Název</caption><description>Popis</description></category>
+</value>
+}}}
+
+||index||index||
+||name||name||
+||parentID||parentID||
+||partnerID||partnerID||
+||needInfo||need more info about autor:<br />name<br />e-mail<br />phone<br />address<br />city<br />zip code<br />user must accept this terms: "I agree with publishing in newspaper as well as on iDnes.cz web pages. I am author of photos of the album and I have all rights to them as well as the permissions from peopple from the pictures."||
+||url||url to all photo from category||
+||sendOriginal||sendOriginal||
+||sendHires||sendHires||
+||caption||caption||
+||description||description||
+
+*categories in table:*
+
+||index||name||parentID||partnerID||needInfo||url||sendOriginal||sendHires||caption||description||
+||0|| zadejte prosím kategorie||0||0||0|| ||0|| || || ||
+||105||*moje_fotozprávy||0||0||1||http://www.rajce.idnes.cz/noviny||0|| ||Více informací|| ||
+||subcategories:||||||||||||||||||||
+|| ||sport||||||||||||||||||
+|| ||kultura||||||||||||||||||
+|| ||ostatní||||||||||||||||||
+||1||architektura||0||0||0|| ||0|| || || ||
+||2||auta||0||0||0|| ||0|| || || ||
+||3||cestování||0||0||0|| ||0|| || || ||
+||4||děti||0||0||0|| ||0|| || || ||
+||5||doma||0||0||0|| ||0|| || || ||
+||6||dokumenty||0||0||0|| ||0|| || || ||
+||7||klasická-fotografie||0||0||0|| ||0|| || || ||
+||8||koníčky||0||0||0|| ||0|| || || ||
+||9||krajina||0||0||0|| ||0|| || || ||
+||10||kultura||0||0||0|| ||0|| || || ||
+||11||lidé||0||0||0|| ||0|| || || ||
+||12||makro||0||0||0|| ||0|| || || ||
+||13||města||0||0||0|| ||0|| || || ||
+||14||oslavy||0||0||0|| ||0|| || || ||
+||15||ostatní||0||0||0|| ||0|| || || ||
+||16||práce||0||0||0|| ||0|| || || ||
+||17||příroda||0||0||0|| ||0|| || || ||
+||18||rodina-přátelé||0||0||0|| ||0|| || || ||
+||19||sport||0||0||0|| ||0|| || || ||
+||20||širokoúhlé||0||0||0|| ||0|| || || ||
+||21||události||0||0||0|| ||0|| || || ||
+||22||umělecké||0||0||0|| ||0|| || || ||
+||23||vesnice||0||0||0|| ||0|| || || ||
+||24||zábava||0||0||0|| ||0|| || || ||
+||25||země||0||0||0|| ||0|| || || ||
+||26||zvířata||0||0||0|| ||0|| || || ||
+||108||*soutěž:_Plzeň_2015||0||0||1||http://www.rajce.idnes.cz/plzen2015||1|| ||Název||Popis||
+||109||Plzeň_očima_umění_a_technologie.||108||0||1||http://www.rajce.idnes.cz/plzen2015||1|| ||Název||Popis||
+||110||Plzeň_očima_příběhů_a_zdrojů.||108||0||1||http://www.rajce.idnes.cz/plzen2015||1|| ||Název||Popis||
+||111||Plzeň_očima_tranzitu_a_minorit.||108||0||1||http://www.rajce.idnes.cz/plzen2015||1|| ||Název||Popis||
+||112||Plzeň_očima_vztahů_a_citů.||108||0||1||http://www.rajce.idnes.cz/plzen2015||1|| ||Název||Popis||
+||128||*soutěž:_nejkrásnější_zahrada||0||0||1|| ||0|| ||Název||Popis||
+||129||*soutěž:_nejlepší_zlepšovák||0||0||1|| ||0|| ||Název||Popis||
+||130||*soutěž:_nejhezčí_zahradní_koutek||0||0||1|| ||0|| ||Název||Popis||
+||131||*soutěž:_Life_in_Line_2010||0||0||1|| ||0|| ||Název||Popis||

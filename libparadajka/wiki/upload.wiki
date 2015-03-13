@@ -1,0 +1,43 @@
+#labels Phase-Design
+*variables:*
+
+[username]
+
+[password]
+
+[PhotosXml]
+
+[AlbumID]
+
+[AlbumName]
+
+*request type:* POST
+
+*URL:* /client14/upload.php
+
+*parameters:*
+
+userName={username}
+
+userPass={password}
+
+settings={PhotoXml}
+
+albumID={albumID}
+
+soubor=filename
+
+image upload:
+directory={AlbumName}/images
+image thumb upload:
+directory={AlbumName}/thumb
+
+*responce:*
+
+{{{
+<result>OK</result>
+<value>
+   <fileSize>42456</fileSize>
+   <uploadDelay>0</uploadDelay>
+</value>
+}}}

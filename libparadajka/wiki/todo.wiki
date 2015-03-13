@@ -1,0 +1,5 @@
+= ToDo =
+
+  * zdokumentovat komunikaciu
+  * overit ju napriklad v shell 
+  * libka + program (primitivny len na testovanie, pouzit libcurl,libxml ....)

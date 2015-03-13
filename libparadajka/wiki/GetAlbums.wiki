@@ -1,0 +1,41 @@
+#labels Phase-Design
+==User albums==
+
+*request type:* POST
+
+*URL:* /client14/command.php
+
+*parameters:* command=GetAlbums&userName=*{username}*&userPass=*{password}*&userID=*{userID}*&albumID=0&eof=1
+
+*responce:*
+{{{
+<result>OK</result>
+<value>
+  <album>
+    <albumID>3476020</albumID>
+    <name>tmp_test</name>
+    <desc>popis albumu</desc>
+    <localPath>Z:/home/nail/src/rajce/tmp_test</localPath>
+    <serverDir>tmp_test</serverDir>
+    <size>211324</size>
+    <maxSizeImage>700</maxSizeImage>
+    <maxSizeThumb>100</maxSizeThumb>
+    <albumVisible>0</albumVisible>
+    <albumSecure>1</albumSecure>
+    <albumSecureName>test_login</albumSecureName>
+    <albumSecurePass>test_password</albumSecurePass>
+    <thumbName>album_cover.jpg</thumbName>
+    <createDate>2010-05-30 00:14:08</createDate>
+    <updateDate>2010-05-30 00:14:13</updateDate>
+    <photoCount>4</photoCount>
+    <uploading>0</uploading>
+    <photosUrl>http://img5.rajce.idnes.cz/d0506/3/3476/3476020_b3dbb40ecf5a7122cb4438d596a5d54f/</photosUrl>
+    <albumCategory>1</albumCategory>
+    <albumTags></albumTags>
+    <startDateInterval>2010-05-30 00:00:00</startDateInterval>
+    <endDateInterval>2010-05-30 00:00:00</endDateInterval>
+    <manualDateInterval>1</manualDateInterval>
+    </album>`\`n
+  <NoAlbums>
+</value>
+}}}

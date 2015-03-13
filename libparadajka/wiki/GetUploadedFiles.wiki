@@ -1,0 +1,79 @@
+#labels Phase-Design
+*variables:*
+
+[username]
+
+[password]
+
+[UserID]
+
+[AlbumName]
+
+*request type:* POST
+
+*URL:* /client14/command.php 
+
+*parameters:*
+command=GetUploadedFiles&userName={username}&userPass={password}&userID={UserID}&albumDirName={AlbumName}&eof=1&
+
+*responce:*
+{{{
+<result>OK</result>
+<value>
+  <thumbDir>
+    <serverFile>
+      <fileName>full_exif.jpg</fileName>
+      <fileSize>10502</fileSize>
+    </serverFile>
+    .
+    .
+    .
+    .
+    <serverFile>
+      <fileName>XXXX</fileName>
+      <fileSize>YYYY</fileSize>
+    </serverFile>
+  </thumbDir>
+  <imagesDir>
+    <serverFile>
+      <fileName>XXXX</fileName>
+      <fileSize>YYYY</fileSize>
+    </serverFile>
+    .
+    .
+    .
+    .
+    <serverFile>
+      <fileName>full_exif.jpg</fileName>
+      <fileSize>42456</fileSize>
+    </serverFile>
+  </imagesDir>
+  <hdimagesDir>
+  </hdimagesDir>
+  <videoDir>
+  </videoDir>
+</value>
+}}}
+
+*example:*
+{{{
+<result>OK</result>
+<value>
+<thumbDir>
+<serverFile><fileName>full_exif.jpg</fileName><fileSize>10502</fileSize></serverFile>
+<serverFile><fileName>album_cover.jpg</fileName><fileSize>10502</fileSize></serverFile>
+<serverFile><fileName>rotovane_vpravo.jpg</fileName><fileSize>10492</fileSize></serverFile>
+<serverFile><fileName>rotovane_vlavo.jpg</fileName><fileSize>10478</fileSize></serverFile>
+</thumbDir>
+<imagesDir>
+<serverFile><fileName>rotovane_vlavo.jpg</fileName><fileSize>42155</fileSize></serverFile>
+<serverFile><fileName>rotovane_vpravo.jpg</fileName><fileSize>42283</fileSize></serverFile>
+<serverFile><fileName>album_cover.jpg</fileName><fileSize>42456</fileSize></serverFile>
+<serverFile><fileName>full_exif.jpg</fileName><fileSize>42456</fileSize></serverFile>
+</imagesDir>
+<hdimagesDir>
+</hdimagesDir>
+<videoDir>
+</videoDir>
+</value>
+}}}

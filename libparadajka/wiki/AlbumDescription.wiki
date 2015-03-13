@@ -1,0 +1,6 @@
+#labels Phase-Design
+Description of album also with national characters (10000 chars max)
+
+*is in:*
+
+[CreateAlbum] [EmptyAlbum] [SetAlbumUploading]

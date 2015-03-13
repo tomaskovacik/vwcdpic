@@ -1,0 +1,10 @@
+#labels Phase-Design
+type of photo
+
+*values:*
+
+photo
+
+video
+
+todo: HDphoto
