@@ -324,7 +324,7 @@
 ; PIC12F629/PIC12F675 Connections
 ;--------------------------------------------------------------------------
 ; PIC GP5(pin 2) -> VW Pin 2 Clock  to Head Unit
-; PIC GP4(pin 4) -> VW Pin 1 Data   to Head Unit
+; PIC GP4(pin 3) -> VW Pin 1 Data   to Head Unit
 ; PIC GP2(pin 5) <- VW Pin 4 Data from Head Unit
 ; Make sure PIC and VW Head Unit have common GND.
 ; 
