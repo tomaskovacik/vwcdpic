@@ -321,7 +321,7 @@
 ; serial port circuitry.
 
 ;--------------------------------------------------------------------------
-; PIC12F629/PIC12F675 Connections
+; PIC12F629/PIC12F675 Connections v2 original pinout uncoment proper section down 
 ;--------------------------------------------------------------------------
 ; PIC GP5(pin 2) -> VW Pin 2 Clock  to Head Unit
 ; PIC GP4(pin 3) -> VW Pin 1 Data   to Head Unit
@@ -331,6 +331,20 @@
 ; PIC GP0(pin 7) -> PJRC MP3 Player RX (19.2Kbps serial, working)
 ; PIC GP1(pin 6) -> Archos Jukebox RX (9600bps serial with weak pull-up,8bits, 1stop bit, no parity)
 ; PIC GP1(pin 6) -> 3G iPod Serial RX (19.2Kbps serial with weak pull-up)
+; Make sure PIC and MP3 Player have common GND.
+;--------------------------------------------------------------------------
+
+;--------------------------------------------------------------------------
+; PIC12F629/PIC12F675 Connections v3 by jarex uncoment proper section down
+;--------------------------------------------------------------------------
+; PIC GP0(pin 7) -> VW Pin 2 Clock  to Head Unit
+; PIC GP1(pin 6) -> VW Pin 1 Data   to Head Unit
+; PIC GP2(pin 5) <- VW Pin 4 Data from Head Unit
+; Make sure PIC and VW Head Unit have common GND.
+; 
+; PIC GP4(pin 3) -> PJRC MP3 Player RX (19.2Kbps serial, working)
+; PIC GP5(pin 2) -> Archos Jukebox RX (9600bps serial with weak pull-up,8bits, 1stop bit, no parity)
+; PIC GP5(pin 2) -> 3G iPod Serial RX (19.2Kbps serial with weak pull-up)
 ; Make sure PIC and MP3 Player have common GND.
 ;--------------------------------------------------------------------------
 
@@ -353,13 +367,23 @@
 ;--------------------------------------------------------------------------
 
 	IFNDEF __16F627
-SCLK			EQU	5
-SRX				EQU	4
-PWTX			EQU	2
+;v2 pinout
+;SCLK			EQU	5
+;SRX				EQU	4
+;PWTX			EQU	2
 
-SerialTX		EQU	0
-iPodSerialTX	EQU 1		; GPIO 1
-SerialTX9600	EQU	1		; GPIO 1
+;SerialTX		EQU	0
+;iPodSerialTX	EQU 1		; GPIO 1
+;SerialTX9600	EQU	1		; GPIO 1
+;v3 pinout:
+
+SCLK                   EQU     0
+SRX                    EQU     1
+PWTX                   EQU     2
+
+SerialTX               EQU     4
+iPodSerialTX           EQU     5
+SerialTX9600           EQU     5
 
 #define SPIO GPIO
 #define HPIO GPIO
