@@ -20,8 +20,8 @@ http://www.micahcarrick.com/pic-programming-linux.html
 
 for i in `ls *.asm|cut -d\. -f2`;do gpasm vwcdpic-2.$i.asm;done
 
-v2 now better handled with audi concert1/chorus1 head unit (chorus1 tested,concert1 untested - hw is the same almost, so it should work..)
+v2 now better handled with audi concert1/chorus1 head unit (chorus1,concert1 untested)
 
-hex/vwcdpic-3.x-2.7d-RCD300-1-pic12f629.hex is only version works with RCD300 head units!!! tested thx to Morten for test.
+hex/vwcdpic-3.x-2.7d-RCD300-1-pic12f629.hex is only version works with RCD300 head units! tested thx to Morten for test.
 
 
