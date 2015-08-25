@@ -4,14 +4,14 @@ files form vwcdpic project
 notes:
 -----------
 pinout:
-
++---------------+---+
 | +5v           | 1 |
 | GND           | 8 |
 | CLK:          | 7 |
 | DataIn:       | 6 |
 | DataOut:      | 5 |
 | serial 9600:  | 2 |
-
++---------------+---+
 compile:
 
 http://www.micahcarrick.com/pic-programming-linux.html
