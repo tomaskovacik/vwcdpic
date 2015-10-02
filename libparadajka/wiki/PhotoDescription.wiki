@@ -1,6 +1,0 @@
-#labels Phase-Design
-description of picture, max 1000 chars
-
-*is in:*
-
-[PhotosXml]

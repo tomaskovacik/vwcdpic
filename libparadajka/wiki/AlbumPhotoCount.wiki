@@ -1,6 +1,0 @@
-#labels Phase-Design
-Number of photos for upload
-
-*is in:*
-
-[CreateAlbum] [EmptyAlbum] [SetAlbumUploading]

@@ -1,6 +1,0 @@
-#labels Phase-Design
-set album category (category index), category index from [GetCategory]
-
-*is in:*
-
-[CreateAlbum] [EmptyAlbum] [SetAlbumUploading]

@@ -1,6 +1,0 @@
-#labels Phase-Design
-Name of Photo
-
-*is in:*
-
-[PhotosXml]

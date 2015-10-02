@@ -1,8 +1,0 @@
-#labels Phase-Design
-content is video
-
-*values:*
-
-0 = photo
-
-1 = video

@@ -1,6 +1,0 @@
-#labels Phase-Design
-from [login] responce, value of xml tag `<name>`
-
-*is in:*
-
-[SetAlbumUploading] [EmptyAlbum] [CreateAlbum]

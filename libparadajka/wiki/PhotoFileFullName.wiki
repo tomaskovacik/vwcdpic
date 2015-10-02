@@ -1,8 +1,0 @@
-#labels Phase-Design
-full path to picture
-
-*example:*
-
-{{{
-<fileFullName>Z:/tmp_test/album_cover.jpg</fileFullName>
-}}}

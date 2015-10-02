@@ -1,2 +1,0 @@
-#labels Phase-Design
-exiftool -ExifVersion

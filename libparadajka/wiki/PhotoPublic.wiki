@@ -1,8 +1,0 @@
-#labels Phase-Design
-set picture to be public or private
-
-*value:*
-
-1 = public
-
-0 = private (todo: test it)

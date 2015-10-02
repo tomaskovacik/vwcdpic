@@ -1,3 +1,0 @@
-#labels Phase-Design
-exiftool -Model
-
