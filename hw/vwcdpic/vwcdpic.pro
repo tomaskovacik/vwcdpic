@@ -1,4 +1,4 @@
-update=Wed 07 Oct 2015 11:18:40 CEST
+update=Fri 09 Oct 2015 14:17:09 CEST
 last_client=kicad
 [pcbnew]
 version=1
@@ -100,8 +100,6 @@ version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
-[general]
-version=1
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
@@ -147,4 +145,5 @@ LibName28=contrib
 LibName29=valves
 LibName30=phonejack
 LibName31=device_sot
-LibName32=vwcdpic-rescue
+[general]
+version=1
