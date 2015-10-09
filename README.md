@@ -38,7 +38,7 @@ notes:
 	- vw blaupunkt RadioNavigationSystem MCD
 	- VW Passat Blaupunkt Gamma (similar to Gamma V)
 	- Audi Symphony II BOSE
-        - from original list of supported radios look to original.html
+	- for original list of supported radios look to original.html
 
 hex/vwcdpic-3.x-2.7d-RCD300-1-pic12f629.hex is only version works with RCD300 head units! thx to Morten for test.
 
