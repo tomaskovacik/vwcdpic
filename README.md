@@ -12,6 +12,7 @@ spare boards from dirtyPCB are avalaible for sale:
 <a href="https://www.tindie.com/stores/tomaskovacik/?ref=offsite_badges&utm_source=sellers_tomaskovacik&utm_medium=badges&utm_campaign=badge_medium"><img src="https://d2ss6ovg47m0r5.cloudfront.net/badges/tindie-mediums.png" alt="I sell on Tindie" width="150" height="78"></a>
 
 From original vwcdpic site:
+
 *Allows you to use most audio devices (such as MP3 players) with your stock head unit in 1998+ Volkswagen automobiles. 
 
 The Volkswagen 1998 and later automobiles are equipped with a trunk mounted CD Changer interface. This is great for hooking up an extra audio device to your car's sound system because it is pre-wired for you. However, Volkswagen's OEM head unit locks this interface from being used by anything but a Volkswagen CD Changer by muting the audio inputs unless there is a valid data stream coming from the CD Changer. Of course, this data stream is not documented by Volkswagen.
