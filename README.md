@@ -19,8 +19,12 @@ From original vwcdpic site:
 
 *The VWCDPIC is a "lock pick," if you will, that unlocks the CD Changer interface by sending the required data stream, fooling the head unit into thinking a real Volkswagen CD Changer is connected. With a VWCDPIC, you'll be able to connect any audio device up to your stock OEM head unit. If you are connecting a PJRC MP3 Player, you'll even be able to remotely control your player from the head unit's buttons up front (after you build a cable described here). *
 
+folders:
+-------------------
 hex: hex files from original vwcdpic site
+
 old: old files 
+
 hw: complet kicad project for smd and tht version of emulator
 
 pinout:
