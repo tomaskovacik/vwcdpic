@@ -1,31 +1,52 @@
-VWCDPIC Audio Interface Adapter
-==========================
-
-This is my personal "resurrection" of VWCDPIC project with:
-
-- custom fixies/patches (take look down to notes about fixies)
-- PCB (smd and tht version - HW folder)
-- all files from internet relative to wvcdpic, just for archive (old folder)
-
-spare boards from dirtyPCB are avalaible for sale:
-
 <a href="https://www.tindie.com/stores/tomaskovacik/?ref=offsite_badges&utm_source=sellers_tomaskovacik&utm_medium=badges&utm_campaign=badge_medium"><img src="https://d2ss6ovg47m0r5.cloudfront.net/badges/tindie-mediums.png" alt="I sell on Tindie" width="150" height="78"></a>
 
-From original vwcdpic site:
+Full backup/mirror of original vwcdpic site is on <a href="https://web.archive.org/web/20080920064914/http://www.k9spud.com/vwcdpic/devel/">archive.org</a>
 
-*Allows you to use most audio devices (such as MP3 players) with your stock head unit in 1998+ Volkswagen automobiles.*
+vwcdpic-2.8pre3.asm - laster sourcecode on internet, with my fixies
+vwcdpic-3.x-2.7d-RCD300-1-pic12f629.hex is only version works with RCD300 head unit, if it works with other, for which 2.8 didnt, let me know please.
 
-*The Volkswagen 1998 and later automobiles are equipped with a trunk mounted CD Changer interface. This is great for hooking up an extra audio device to your car's sound system because it is pre-wired for you. However, Volkswagen's OEM head unit locks this interface from being used by anything but a Volkswagen CD Changer by muting the audio inputs unless there is a valid data stream coming from the CD Changer. Of course, this data stream is not documented by Volkswagen.*
+notes:
+-------
+2.8pre3
+- better works with audi concert1/chorus1 head unit made by blaupunkt (previous,next CD works)
+- switching from CDC to radio back to CDC works on concert1/chorus1
+- tested with:
+	- audi concert 1(blaupunkt)
+	- audi concert 1(philips)
+	- audi concert 2
+	- chorus1(blaupunkt)
+	- Symohony I
+	- vw blaupunkt RadioNavigationSystem MCD
+	- VW Passat Blaupunkt Gamma (similar to Gamma V)
+	- Audi Symphony II BOSE
+	- original project <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units">list</a>
+		- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Volkswagen"><span class="tocnumber">1 <span class="toctext">Volkswagen</a>
+<ul>
+			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#New_Beetle">New Beetle</a>
+			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Touareg">Touareg</a>
+			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Passat_B3.2FB4_.281993.2B.29">Passat B3/B4 (1993+)</a>
+			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#EOS_3.2_.282008.29">EOS 3.2 (2008)</a>
+			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Single_DIN_Monsoon">Single DIN Monsoon</a>
+			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Single_DIN_Monsoon_with_In-Dash_CD_Player">Single DIN Monsoon with In-Dash CD Player</a>
+			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Double_DIN_Monsoon">Double DIN Monsoon</a>
+			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Multi-Function_Display_.28MFD.29">Multi-Function Display (MFD)</a>
+			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Gamma_IV">Gamma IV</a>
+			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Gamma_V">Gamma V</a>
+			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#RCD300">RCD300</a>
+			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Blaupunkt_R100">Blaupunkt R100</a>
+			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#RNS300">RNS300</a>
+			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#RN_S2_DVD">RN S2 DVD</a>
 
-*The VWCDPIC is a "lock pick," if you will, that unlocks the CD Changer interface by sending the required data stream, fooling the head unit into thinking a real Volkswagen CD Changer is connected. With a VWCDPIC, you'll be able to connect any audio device up to your stock OEM head unit. If you are connecting a PJRC MP3 Player, you'll even be able to remotely control your player from the head unit's buttons up front (after you build a cable described here). *
+		- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Seat">Seat</a>
+			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Leon">Leon</a>
+			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Ibiza">Ibiza</a>
 
-folders:
--------------------
-hex: hex files from original vwcdpic site
+		- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Skoda"><span class="tocnumber">3 <span class="toctext">Skoda</a>
+			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Symphony">Symphony</a>
 
-old: old files 
+		- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Audi"><span class="tocnumber">4 <span class="toctext">Audi</a>
+			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Audi_Chorus_II">Audi Chorus II</a>
 
-hw: complet kicad project for smd and tht version of emulator
 
 pinout:
 --------------------
@@ -45,25 +66,8 @@ http://www.micahcarrick.com/pic-programming-linux.html
 
 for i in `ls *.asm|cut -d\. -f2`;do gpasm vwcdpic-2.$i.asm;done
 
-notes:
--------
-2.8pre3 (latest 
-- better works with audi concert1/chorus1 head unit made by blaupunkt (previous,next CD works)
-- switching from CDC to radio back to CDC works on concert1/chorus1
-- tested with:
-	- audi concert 1(blaupunkt)
-	- audi concert 1(philips)
-	- audi concert 2
-	- chorus1(blaupunkt)
-	- Symohony I
-	- vw blaupunkt RadioNavigationSystem MCD
-	- VW Passat Blaupunkt Gamma (similar to Gamma V)
-	- Audi Symphony II BOSE
-	- for original list of supported radios look to original.html
+about connectivity to music players
+---------------------------------------------
 
-hex/vwcdpic-3.x-2.7d-RCD300-1-pic12f629.hex is only version works with RCD300 head units! thx to Morten for test.
-
-for more info look in original.html
-
-
+all what is mentioned in 
 
