@@ -1,8 +1,8 @@
 ; -*- tab-width: 4 -*-
 ; VW CD Changer Protocol Implementation 
-; For use on PIC12F629 at 4MHz/5VDC
+; For use on PIC12F6XX at 4MHz/5VDC
 ;
-; Copyright (c) 2002-2004, Edward Schlunder <ed@k9spud.com>
+; Copyright (c) 2002-2005, K9spud LLC.
 ;
 ; This program is free software; you can redistribute it and/or
 ; modify it under the terms of the GNU General Public License
@@ -18,17 +18,15 @@
 ; along with this program; if not, write to the Free Software
 ; Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-
-;; The original author maintains a website at http://www.k9spud.com/ where 
-;; you can order a pre-assembled VWCDPIC board that runs this software.
-;; Schematics for building your own from scratch are also available.
+;; Please visit http://www.k9spud.com/ where you can find the latest 
+;; version of this software and information on building the hardware 
+;; needed to run this software.
 ;;
 ;; If you sell devices derived from this software, make sure you read
 ;; and strictly adhere to the provisions set forth in the GNU General Public 
 ;; License. Specifically, any modifications you make to this source code
 ;; must be made available to the public under the GNU GPL.
 ;;
-
 ;; Credits
 ;; -------
 ;; Andy Wilson <awilson@NOSPAM.microsoft.com> - Monsoon protocol info
@@ -41,6 +39,38 @@
 ;;		Suggested changes to improve Audi Concert II remote control capability.
 ;;
 ;; $Log: vwcdpic.asm,v $
+;; Revision 1.62.4.8  2005/05/14 19:14:43  edwards
+;; Tagged for v2.7d release.
+;;
+;; Revision 1.62.4.7  2005/05/10 04:45:39  edwards
+;; Acknowledge bit wasn't being set correctly.
+;; CD Loaded packets weren't being generated correctly.
+;; Added RCD300 hold down mix button command.
+;;
+;; Revision 1.62.4.6  2005/05/01 21:40:45  edwards
+;; Fixed a little bug with MIX light being inverted.
+;;
+;; Revision 1.62.4.5  2005/05/01 08:00:18  edwards
+;; First attempt at inverting all head unit packet data bits so that it is easier to
+;; read the source code.
+;;
+;; Revision 1.62.4.4  2005/05/01 04:41:37  edwards
+;; Backed out previous serial fix and applied a different fix that is more correct.
+;; Added support for VWCDPIC v3.x hardware layout.
+;; Added support for more PICmicro chips that are compatible.
+;; Started migrating Volkswagen CMR to mainline branch.
+;;
+;; Revision 1.62.4.3  2005/04/30 07:35:58  edwards
+;; Modified timing of 19.2Kbps serial routine. Now works on PIC12F683.
+;;
+;; Revision 1.62.4.2  2005/04/24 06:41:36  edwards
+;; Started adding support for new PIC12F683 chip. Untested right now.
+;;
+;; Revision 1.62.4.1  2005/04/24 05:01:24  edwards
+;; Modified head unit refresh period from 100ms between refresh packets
+;; down to 50ms between refresh packets. Maybe this will help with RCD300
+;; head units.
+;;
 ;; Revision 1.62  2004/07/16 01:02:03  edwards
 ;; Added track rollover for Audi Concert II jog wheel.
 ;;
@@ -257,23 +287,6 @@
 ;;
 ;; v1.0
 ;;	initial release
-
-;;; This code targets PIC12F629 chip by default, you can override with
-;;; command line setting to assembler.
-	LIST P=12F629, R=DEC
-	__CONFIG _BODEN_ON & _MCLRE_OFF & _WDT_OFF & _PWRTE_ON & _CP_OFF & _INTRC_OSC_NOCLKOUT
-
-	IFDEF __12F629
-#include <p12f629.inc>
-	ENDIF
-
-	IFDEF __12F675
-#include <p12f675.inc>
-	ENDIF
-
-	IFDEF __16F627
-#include <p16f627.inc>
-	ENDIF
 				
 ; Precompiler Options
 
@@ -283,21 +296,15 @@
 
 ; Archos Jukebox 9600 baud remote control support. 
 #define ARCHOS_SUPPORT
-;--------------------------------------------------------------------------
-; PIC12F629/PIC12F675 Connections
-;--------------------------------------------------------------------------
-; PIC GP5 -> VW Pin 2 Clock  to Head Unit
-; PIC GP4 -> VW Pin 1 Data   to Head Unit
-; PIC GP2 <- VW Pin 4 Data from Head Unit
-; Make sure PIC and VW Head Unit have common GND.
-; 
-; PIC GP0 -> PJRC MP3 Player RX (19.2Kbps serial, working)
-; PIC GP1 -> Archos Jukebox RX (9600bps serial, untested)
-; Make sure PIC and MP3 Player have common GND.
-;--------------------------------------------------------------------------
+
+; This firmware source code file is intended to support all hardware
+; revisions of the VWCDPIC device. Below are descriptions of the
+; different hardware revision's pin connections to the PICmicro. 
+; You must uncomment one "#define" statement to select which hardware
+; revision you want to compile for.
 
 ;--------------------------------------------------------------------------
-; PIC16F627 Connections
+; VWCDPIC 1.x PIC16F627 Connections
 ;--------------------------------------------------------------------------
 ; PIC RA3 -> VW Pin 2 Clock  to Head Unit
 ; PIC RA2 -> VW Pin 1 Data   to Head Unit
@@ -308,27 +315,165 @@
 ; PIC RB7 -> Archos Jukebox RX (9600bps serial, untested)
 ; Make sure PIC and MP3 Player have common GND.
 ;--------------------------------------------------------------------------
+;#define VWCDPIC_1X
 
-	IFNDEF __16F627
+;--------------------------------------------------------------------------
+; VWCDPIC Volkswagen CMR PIC16F627(a)/PIC16F628(a) Connections
+;--------------------------------------------------------------------------
+; PIC RA3 -> VW Pin 2 Clock  to Head Unit
+; PIC RA2 -> VW Pin 1 Data   to Head Unit
+; PIC RB0 <- VW Pin 4 Data from Head Unit
+; Make sure PIC and VW Head Unit have common GND.
+; 
+; PIC RB6 -> PJRC MP3 Player RX (19.2Kbps serial)
+; PIC RB7 -> Archos Jukebox RX (9600bps serial with weak pull-up)
+; Make sure PIC and MP3 Player have common GND.
+;
+; Volkswagen CMR:
+; PIC RB1 -> TP11 when button Mix is pressed has about 15 
+;			 seconds logic low output (one pulse)
+;			 ALSO:
+;			 when soft-button CD6 is pressed, TP11 has 
+;			 about 3 seconds logic low output (one pulse)
+;			 FINALLY:
+;			 when button SCAN is pressed, TP11 has about 20ms
+; 			 logic low output (one pulse)
+;
+; PIC RB2 -> TP14 when button Next Track (>>) is pressed, has 
+;			 about 20ms logic low output (one pulse)
+;
+; PIC RB3 -> TP15 when button Last Track (<<) is pressed, TP15 
+;			 has about 20ms logic low output (one pulse)
+;
+; PIC RB4 -> Track number is incremented when one pulse (low active) on RB4
+;
+; PIC RB5 -> Track number is decremented when one pulse (low active) on RB5
+;--------------------------------------------------------------------------
+;#define VWCDPIC_CMR
+
+;--------------------------------------------------------------------------
+; VWCDPIC 2.x PIC12F629/PIC12F675/PIC12F683 Connections
+;--------------------------------------------------------------------------
+; PIC GP5 -> VW Pin 2 Clock  to Head Unit
+; PIC GP4 -> VW Pin 1 Data   to Head Unit
+; PIC GP2 <- VW Pin 4 Data from Head Unit
+; Make sure PIC and VW Head Unit have common GND.
+; 
+; PIC GP0 -> PJRC MP3 Player RX (19.2Kbps serial)
+; PIC GP1 -> Archos Jukebox RX (9600bps serial with weak pull-up)
+; Make sure PIC and MP3 Player have common GND.
+;--------------------------------------------------------------------------
+#define VWCDPIC_2X
+
+;--------------------------------------------------------------------------
+; VWCDPIC 3.x PIC12F629/PIC12F675/PIC12F683 Connections
+;--------------------------------------------------------------------------
+; PIC GP0 -> VW Pin 2 Clock  to Head Unit
+; PIC GP1 -> VW Pin 1 Data   to Head Unit
+; PIC GP2 <- VW Pin 4 Data from Head Unit
+; Make sure PIC and VW Head Unit have common GND.
+; 
+; PIC GP4 -> PJRC MP3 Player RX (19.2Kbps serial)
+; PIC GP5 -> Archos Jukebox RX (9600bps serial with weak pull-up)
+; Make sure PIC and MP3 Player have common GND.
+;--------------------------------------------------------------------------
+;#define VWCDPIC_3X
+
+;;; This code targets several different PICmicro chips, you must select
+;;; which PIC you are using with the command line setting to assembler.
+;;;
+;;; Example (PIC12F683):
+;;; mpasmwin.exe /p12F683 vwcdpic.asm
+
+	IFDEF __12F683
+	LIST P=12F683, R=DEC
+	__CONFIG _BOD_ON & _MCLRE_OFF & _WDT_OFF & _PWRTE_ON & _CP_OFF & _INTRC_OSC_NOCLKOUT
+#include <p12f683.inc>
+#define PIC12F
+	ENDIF
+
+	IFDEF __12F629
+	LIST P=12F629, R=DEC
+	__CONFIG _BODEN_ON & _MCLRE_OFF & _WDT_OFF & _PWRTE_ON & _CP_OFF & _INTRC_OSC_NOCLKOUT
+#include <p12f629.inc>
+#define PIC12F
+	ENDIF
+
+	IFDEF __12F675
+	LIST P=12F675, R=DEC
+	__CONFIG _BODEN_ON & _MCLRE_OFF & _WDT_OFF & _PWRTE_ON & _CP_OFF & _INTRC_OSC_NOCLKOUT
+#include <p12f675.inc>
+#define PIC12F
+	ENDIF
+
+	IFDEF __16F627
+	LIST P=16F627, R=DEC
+	__CONFIG _BODEN_ON & _MCLRE_OFF & _WDT_OFF & _PWRTE_ON & _CP_OFF & _INTRC_OSC_NOCLKOUT
+#include <p16f627.inc>
+#define PIC16F
+	ENDIF
+
+	IFDEF __16F627A
+	LIST P=16F627A, R=DEC
+	__CONFIG _BODEN_ON & _MCLRE_OFF & _WDT_OFF & _PWRTE_ON & _CP_OFF & _INTRC_OSC_NOCLKOUT
+#include <p16f627a.inc>
+#define PIC16F
+	ENDIF
+
+	IFDEF __16F628
+	LIST P=16F628, R=DEC
+	__CONFIG _BODEN_ON & _MCLRE_OFF & _WDT_OFF & _PWRTE_ON & _CP_OFF & _INTRC_OSC_NOCLKOUT
+#include <p16f628.inc>
+#define PIC16F
+	ENDIF
+
+	IFDEF __16F628A
+	LIST P=16F628A, R=DEC
+	__CONFIG _BODEN_ON & _MCLRE_OFF & _WDT_OFF & _PWRTE_ON & _CP_OFF & _INTRC_OSC_NOCLKOUT
+#include <p16f628a.inc>
+#define PIC16F
+	ENDIF
+
+
+	IFDEF VWCDPIC_3X
+;; PIC12F6XX ;;;;;;;;;;;;
+SCLK			EQU	0
+SRX				EQU	1
+PWTX			EQU	2
+
+SerialTX		EQU	4
+SerialTX9600	EQU	5
+;;;;;;;;;;;;;;;;;;;;;;;;;
+#define SPIO GPIO
+#define HPIO GPIO
+#define INTPORT GPIO
+#define STRISIO TRISIO
+#define CRCMOD 	da	0x4BB
+	ENDIF
+
+	IFDEF VWCDPIC_2X
+;; PIC12F6XX ;;;;;;;;;;;;
 SCLK			EQU	5
 SRX				EQU	4
 PWTX			EQU	2
 
 SerialTX		EQU	0
 SerialTX9600	EQU	1
-
+;;;;;;;;;;;;;;;;;;;;;;;;;
 #define SPIO GPIO
 #define HPIO GPIO
 #define INTPORT GPIO
 #define STRISIO TRISIO
 #define CRCMOD 	da	0x4BB
-	ELSE
+	ENDIF
+
+	IFDEF VWCDPIC_1X
 SCLK			EQU	3		; RA3
 SRX				EQU	2		; RA2
 PWTX			EQU	0		; RB0/INT
 
 SerialTX		EQU	6		; RB6
-SerialTX9600	EQU	1		; RB7
+SerialTX9600	EQU	1		; RB7 (???)
 
 #define SPIO PORTB
 #define HPIO PORTA
@@ -336,6 +481,26 @@ SerialTX9600	EQU	1		; RB7
 #define STRISIO TRISB
 #define CRCMOD	da 0x775
 	ENDIF
+
+	IFDEF VWCDPIC_CMR
+SCLK			EQU	3		; RA3
+SRX				EQU	2		; RA2
+PWTX			EQU	0		; RB0/INT
+
+SerialTX		EQU	6		; RB6
+SerialTX9600	EQU	7		; RB7 
+
+TP11			EQU 1		; RB1/TP11
+TP14			EQU	3		; RB2/TP14
+TP15			EQU 2		; RB3/TP15
+
+#define SPIO PORTB
+#define HPIO PORTA
+#define INTPORT PORTB
+#define STRISIO TRISB
+#define CRCMOD	da 0x775
+	ENDIF
+
 
 ;; Low period of PWTX line:
 ;; 0: ~650us
@@ -348,17 +513,15 @@ LOWTHRESHOLD	EQU	8			; greater than this signifies 0 bit.
 PKTSIZE			EQU -32			; command packets are 32 bits long.
 
 ; do not refresh head unit faster than 5.5ms (currently not implemented)
-REFRESH_FAST	EQU	55
-
 ; 5.24s slow refresh rate when head unit in FM/AM/Tape mode (not implemented)
-REFRESH_SLOW	EQU	5240
-
-REFRESH_PERIOD	EQU	100			; default to refresh head unit every 10.0ms
-SECONDWAIT		EQU	-10			; (1sec/0.10sec) = 10
-SCANWAIT		EQU	-50			; 10 * 5sec = 50
+REFRESH_PERIOD	EQU	50			; default to refresh head unit every 50.0ms
+SECONDWAIT		EQU	-20			; wait 20 * 50ms to get 1 second (50ms*20 = 1000ms = 1s)
+POWERIDENTWAIT	EQU -15			; wait 10 * 1s to 10 seconds between VWCDPICx.x display
+SCANWAIT		EQU	-50			; wait 100 * 50ms to get 5sec (50ms*100 = 5000ms = 5s)
 
 VER_MAJOR		EQU	'2'
 VER_MINOR		EQU	'7'
+VER_PATCHLEVEL	EQU	'd'
 
 ;--------------------------------------------------------------------------
 ; Variables
@@ -443,13 +606,17 @@ capbufferend	EQU	GPRAM+64	; capture buffer (stores up to 6 commands)
 ; Program Code
 ;--------------------------------------------------------------------------
 	ORG	0
-	clrf	HPIO				; initialize port data latches
+		clrf	HPIO				; initialize port data latches
 
-	; turn comparator off so port can be used for regular i/o functions
-	movlw   (1<<CM2)|(1<<CM1)|(1<<CM0)
-	movwf   CMCON				
+		; turn comparator off so port can be used for regular i/o functions
+		movlw   (1<<CM2)|(1<<CM1)|(1<<CM0)
+	IFDEF CMCON0
+		movwf   CMCON0
+	ELSE
+		movwf   CMCON				
+	ENDIF
 
-	goto	Start
+		goto	Start
 
 ;--------------------------------------------------------------------------
 ; Interrupt Service Routine
@@ -613,7 +780,7 @@ EndInterrupt:
 ; Main Program
 ;--------------------------------------------------------------------------
 Start:
-	IFDEF __16F627
+	IFDEF PIC16F
 		movlw	01000000b		; initialize port data latches
 		movwf	PORTA
 	ENDIF	
@@ -633,7 +800,7 @@ Start:
 	
 	bsf		STATUS, RP0			; select data bank 1
 	ERRORLEVEL -302
-	IFNDEF	__16F627
+	IFDEF PIC12F
 		; enable GPIO pull ups
 		; interrupt on rising edge
 		; prescaler 1:32
@@ -648,7 +815,7 @@ Start:
 
 		;; PIC12FXXX weak pullups are enabled by default for all pins at POR.
 
-	IFNDEF __16F627
+	IFDEF PIC12F
 		movlw	(1<<PWTX) | (1<<3) | (1<<SerialTX9600)
 		movwf	TRISIO			; PWTX, MCLR, and SerialTX9600 pins as input
 	ELSE
@@ -659,25 +826,27 @@ Start:
 
 		clrwdt					; clear WDT & prescaler (avoids possible reset)
 		
-	IFDEF __12F675
-		clrf	ANSEL			; disable analog inputs (only for PIC12F675)
+	IFDEF ANSEL
+		clrf	ANSEL			; disable analog inputs
 	ENDIF
 
-	IFNDEF __16F627
+	IFDEF OSCCAL
 		call	3FFh			; get the calibration value
 		movwf	OSCCAL			; set the calibration register
 	ENDIF
-
 	ERRORLEVEL +302
-		bcf		STATUS, RP0		; go back to data bank 0
-		
+	bcf		STATUS, RP0			; go back to data bank 0
+
 		clrf	progflags
-		clrf	poweridentcount
 		clrf	ACKcount
-		movlw	0xBE
+		movlw	0x41
 		movwf	disc
-		movlw	0xFE
+		movlw	0x01
 		movwf	track
+
+		movlw	POWERIDENTWAIT
+		movwf	poweridentcount
+
 		call	ResetTime
 		call	SetStateIdleThenPlay
 
@@ -699,6 +868,7 @@ SendDisplayPacket:
 		; Reload the registers associated with TIMER1 so that we will
 		; get a flag for the next display update packet send within
 		; REFRESH_PERIOD time.
+		; (1 timer clock/8uS)(1000uS/1ms) = 125 timer clocks/ms
 		bcf		T1CON, TMR1ON 	; turn off timer while reloading wait period
 		movlw	high (0xFFFF - (REFRESH_PERIOD * (1000 / 8)))
 		movwf	TMR1H
@@ -710,62 +880,63 @@ SendDisplayPacket:
 							
 		call	SendPacket
 	
-	incf	poweridentcount, f	; only send the powered identify string
-	btfsc	STATUS, Z			; once in a while
-	call	EnqueueIDENTIFYNEWLINE
+		incfsz	scancount, f
+		goto	SecondWait
 
-	incfsz	scancount, f
-	goto	SecondWait
-
-	movlw	SCANWAIT
-	movwf	scancount
+		movlw	SCANWAIT
+		movwf	scancount
 	
-	movlw	~(1<<scan)			; turn off scan display
-	andwf	progflags, f
+		movlw	~(1<<scan)			; turn off scan display
+		andwf	progflags, f
 
 SecondWait:
-	incfsz	secondcount, f
-	goto	IdleLoopSkipSend
+		incfsz	secondcount, f
+		goto	IdleLoopSkipSend
 
-	movlw	SECONDWAIT
-	movwf	secondcount
-	
-	; increment the time display
+		incfsz	poweridentcount, f
+		goto	SecondIncrement
+
+		call	EnqueueIDENTIFYNEWLINE
+		movlw	POWERIDENTWAIT
+		movwf	poweridentcount
+
 SecondIncrement:
-	decf	second, f
-
-	movlw	0x0F				; skip past hexidecimal codes
-	andwf	second, w
-	addlw	-0x05
-	movlw	-6
-	btfsc	STATUS, Z			; are with at xF?
-	addwf	second, f			; yes, subtract 6 and we'll be at x0 instead
+		movlw	SECONDWAIT
+		movwf	secondcount
 	
-	movlw	0xA6				; have we gone beyond second 59?
-	subwf	second, w
-	btfsc	STATUS, C
-	goto	IdleLoopSkipSend
+		; increment the time display
+		incf	second, f
 
-	movlw	0xFF
-	movwf	second				; yes, set back to second 00
+		movlw	0x0F				; skip past hexidecimal codes
+		andwf	second, w
+		sublw	0x0A
+		movlw	6
+		btfsc	STATUS, Z			; are with at xA?
+		addwf	second, f			; yes, add 6 and we'll be at x0 instead
+		
+		movlw	0x60				; have we gone beyond 59 seconds?
+		subwf	second, w
+		btfss	STATUS, C
+		goto	IdleLoopSkipSend
+
+		clrf	second				; yes, set back to second 00
 
 MinuteIncrement:
-	decf	minute, f
+		incf	minute, f
 
-	movlw	0x0F				; skip past hexidecimal codes
-	andwf	minute, w
-	addlw	-0x05
-	movlw	-6
-	btfsc	STATUS, Z			; are with at xF?
-	addwf	minute, f			; yes, subtract 6 and we'll be at x0 instead
+		movlw	0x0F				; skip past hexidecimal codes
+		andwf	minute, w
+		sublw	0x0A
+		movlw	6
+		btfsc	STATUS, Z			; are with at xA?
+		addwf	minute, f			; yes, add 6 and we'll be at x0 instead
 	
-	movlw	0x66				; have we gone beyond 99?
-	subwf	minute, w
-	btfsc	STATUS, C
-	goto	IdleLoopSkipSend
+		movlw	0xA0				; have we gone beyond 99 minutes?
+		subwf	minute, w
+		btfss	STATUS, C
+		goto	IdleLoopSkipSend
 
-	movlw	0xFF
-	movwf	minute				; yes, set back to 00
+		clrf	minute				; yes, set back to 00
 
 IdleLoop:
 	btfsc	PIR1, TMR1IF		; has REFRESH_PERIOD time passed?
@@ -845,9 +1016,9 @@ SendArchos:
 	ENDIF
 
 Send19200:
-	call	SerialSend
-	incf	INDF, f				; move to next character in string
-	goto	IdleLoop
+		call	SerialSend
+		incf	INDF, f				; move to next character in string
+		goto	IdleLoop
 
 ;--------------------------------------------------------------------------
 ; ScanCommandBytes - Looks in the command receive buffer and tries
@@ -1059,7 +1230,7 @@ Do_DISABLE:
 		btfsc	progflags, playing
 		call	SetStateIdle	; skip this if we're already in idle mode
 
-		movlw	0xBE
+		movlw	0x41
 		movwf	disc			; set back to CD 1
 
 	IFDEF ARCHOS_SUPPORT
@@ -1077,13 +1248,12 @@ Do_SEEKBACK:
 Do_PREVCD:		
 		call	ResetTime
 
-		incf	disc, f
+		decf	disc, f
 
-		movlw	0xBF			; have we gone below CD 1?
-		subwf	disc, w
-		movlw	0xBE
-		btfsc	STATUS, C
-		movwf	disc			; yes, set back to CD 1
+		movlw	0x0F
+		andwf	disc, w		
+		btfsc	STATUS, Z		; are we at CD 0?
+		incf	disc, f			; yes, set back to CD 1
 
 	IFDEF ARCHOS_SUPPORT
 		movlw	low archosSTOP
@@ -1097,58 +1267,68 @@ Do_PREVCD:
 		goto	EnqueueNEWLINE
 
 Do_SEEKFORWARD:
-	call	ResetTime
-	decf	disc, f
+		call	ResetTime
+		incf	disc, f
 
-	movlw	0xB9			; have we gone above CD 6?
-	subwf	disc, w
-	movlw	0xB9
-	btfss	STATUS, C
-	movwf	disc			; yes, set back to CD 6
-	; Going beyond CD9 displays hex codes on premium head unit.
-	; Examples: "CD A"
-	;			"CD B"
-	;			"CD C" etc...
-  	;
- 	; However, going beyond CD6 mutes audio on monsoon head unit, so we 
-	; definitely don't want to do that.
+		movlw	0x46			; have we gone above CD 6?
+		subwf	disc, w
+		movlw	0x46
+		btfsc	STATUS, C
+		movwf	disc			; yes, set back to CD 6
+		; Going beyond CD9 displays hex codes on premium head unit.
+		; Examples: "CD A"
+		;			"CD B"
+		;			"CD C" etc...
+	  	;
+	 	; However, going beyond CD6 mutes audio on monsoon head unit, so we 
+		; definitely don't want to do that.
 
 	IFDEF ARCHOS_SUPPORT
 		movlw	low archosPLAY
 		call	EnqueueString
 	ENDIF
 
-	movlw	low sNXT_LIST
-	call	EnqueueString
-	goto	EnqueueNEWLINE
+		movlw	low sNXT_LIST
+		call	EnqueueString
+		goto	EnqueueNEWLINE
 
 Do_MIX:	
-	movlw	1<<mix			; toggle mix display
-	xorwf	progflags, f
+		movlw	1<<mix			; toggle mix display
+		xorwf	progflags, f
 
 	IFDEF ARCHOS_SUPPORT
 		movlw	low archosSHUFFLE
 		call	EnqueueString
 	ENDIF
 
-	movlw	low sRANDOM
-	call	EnqueueString
-	goto	EnqueueNEWLINE
+		movlw	low sRANDOM
+		call	EnqueueString
+		goto	EnqueueNEWLINE
+
+Do_PLAY:
+	IFDEF ARCHOS_SUPPORT
+		movlw	low archosMENU
+		call	EnqueueString
+	ENDIF
+
+		movlw	low sPLAY			; this will make the PJRC play/pause
+		call	EnqueueString
+		goto	EnqueueNEWLINE
 
 Do_SCAN:
-	movlw	1<<scan			; toggle scan display
-	xorwf	progflags, f
-	movlw	SCANWAIT
-	movwf	scancount
+		movlw	1<<scan			; toggle scan display
+		xorwf	progflags, f
+		movlw	SCANWAIT
+		movwf	scancount
 
 	IFDEF ARCHOS_SUPPORT
 		movlw	low archosMENU
 		call	EnqueueString
 	ENDIF
 
-	movlw	low sPLAY			; this will make the PJRC play/pause
-	call	EnqueueString
-	goto	EnqueueNEWLINE
+		movlw	low sPLAY			; this will make the PJRC play/pause
+		call	EnqueueString
+		goto	EnqueueNEWLINE
 	
 Do_UP:
 		btfsc	progflags, playing ; skip track lead-in if not in play mode
@@ -1156,19 +1336,19 @@ Do_UP:
 		
 		call	ResetTime
 
-		decf	track, f
+		incf	track, f
 		
 		movlw	0x0F			; skip past hexidecimal codes
 		andwf	track, w
-		addlw	-0x05
-		movlw	-6
-		btfsc	STATUS, Z		; are with at xF?
-		addwf	track, f		; yes, subtract 6 and we'll be at x0 instead
+		sublw	0x0A
+		movlw	6
+		btfsc	STATUS, Z		; are with at xA?
+		addwf	track, f		; yes, add 6 and we'll be at x0 instead
 	
-		movlw	0x66			; have we gone beyond Track 99?
+		movlw	0xA0			; have we gone beyond Track 99?
 		subwf	track, w
-		movlw	0xFE
-		btfss	STATUS, C
+		movlw	0x01
+		btfsc	STATUS, C
 		movwf	track			; yes, rollover to Track 01 so that jog wheels
 								; can continue rolling (Audi Concert II)
 
@@ -1187,18 +1367,16 @@ Do_DOWN:
 		
 		call	ResetTime
 
-		incf	track, f
+		; skip past hexidecimal track numbers
+		movlw	0x0F
+		andwf	track, w		
+		movlw	0x06
+		btfsc	STATUS, Z		; are we at x0?
+		subwf	track, f		; yes, subtract 6 and we'll be at x9 instead
 
-		movlw	0x0F			; skip past hexidecimal codes
-		andwf	track, w
-		movlw	6
-		btfsc	STATUS, Z		; are with at xA?
-		addwf	track, f		; yes, add 6 and we'll be at x9 instead
-
-		movlw	0xFF			; have we gone below Track 1?
-		subwf	track, w
-		movlw	0x66
-		btfsc	STATUS, C
+		decf	track, f
+		movlw	0x99
+		btfsc	STATUS, Z		; have we gone below Track 1?
 		movwf	track			; yes, rollover to Track 99 so that jog wheels
 								; can continue rolling (Audi Concert II)
 
@@ -1212,7 +1390,7 @@ Do_DOWN:
 		goto	EnqueueNEWLINE
 
 Do_CD1:
-	movlw	0xBF - 1
+	movlw	0x41
 	movwf	disc			; set CD 1
 
 	IFDEF ARCHOS_SUPPORT
@@ -1226,7 +1404,7 @@ Do_CD1:
 	goto	EnqueueNEWLINE
 
 Do_CD2:
-	movlw	0xBF - 2
+	movlw	0x42
 	movwf	disc			; set CD 2
 
 	IFDEF ARCHOS_SUPPORT
@@ -1240,7 +1418,7 @@ Do_CD2:
 	goto	EnqueueNEWLINE
 
 Do_CD3:
-	movlw	0xBF - 3
+	movlw	0x43
 	movwf	disc			; set CD 3
 
 	IFDEF ARCHOS_SUPPORT
@@ -1254,7 +1432,7 @@ Do_CD3:
 	goto	EnqueueNEWLINE
 
 Do_CD4:
-	movlw	0xBF - 4
+	movlw	0x44
 	movwf	disc			; set CD 4
 
 	IFDEF ARCHOS_SUPPORT
@@ -1268,7 +1446,7 @@ Do_CD4:
 	goto	EnqueueNEWLINE
 
 Do_CD5:
-	movlw	0xBF - 5
+	movlw	0x45
 	movwf	disc			; set CD 5
 
 	IFDEF ARCHOS_SUPPORT
@@ -1282,7 +1460,7 @@ Do_CD5:
 	goto	EnqueueNEWLINE
 
 Do_CD6:
-	movlw	0xBF - 6
+	movlw	0x46
 	movwf	disc			; set CD 6
 
 	IFDEF ARCHOS_SUPPORT
@@ -1362,7 +1540,7 @@ SetStateInitPlay:
 		movlw	low	StateInitPlay
 		movwf	BIDIstate
 
-		movlw	0x2E
+		movlw	0xD1
 		movwf	discload
 		
 		movlw	-24
@@ -1422,9 +1600,10 @@ SetStateTrackLeadIn:
 ;;; we are instantly ready (no motoring here!).
 		
 ResetTime:
-		movlw	0xFF
-		movwf	second
-		movwf	minute
+		movlw	SECONDWAIT
+		movwf	secondcount
+		clrf 	second
+		clrf	minute
 		return
 
 ;;; =========================================================================
@@ -1450,12 +1629,16 @@ SendDisplayBytesNoCD:
 		movf	second, w
 		call	SendByte
 
-		movlw	0xFB		; mode (scan/mix)
-		btfss	progflags, mix
-		iorlw	0x0F		; turn off mix light
+; D4 - scan on, mix on
+; D0 - scan on, mix off
+; 04 - scan off, mix on
+; 00 - scan off, mix off
+		movlw	0			; mode (scan/mix)
+		btfsc	progflags, mix
+		iorlw	0x04		; turn on mix light
 
 		btfsc	progflags, scan
-		andlw	0x2F		; turn on scan display
+		iorlw	0xD0		; turn on scan display
 
 		goto	SendByte
 
@@ -1463,16 +1646,16 @@ SendDisplayBytesNoCD:
 ;;; tracks and whatnot available on the CD. Required on Audi Concert II so
 ;;; that track up/dn buttons work.
 SendDisplayBytesInitCD:	
-		movlw	0xFF - 0x99		; number of tracks total (99)?
+		movlw	0x99			; number of tracks total (99)?
 		call	SendByte
 
-		movlw	0xFF - 0x99		; total minutes?
+		movlw	0x99			; total minutes?
 		call	SendByte
 
-		movlw	0xFF - 0x59		; total seconds?
+		movlw	0x59			; total seconds?
 		call	SendByte
 
-		movlw	0xB7			; B7, AC, CE, DA, and C8 seen from real CDC, 
+		movlw	0x48			; 48, 53, 31, 25, and 37 seen from real CDC, 
 								; no idea what it really means.
 		goto	SendByte
 		
@@ -1487,7 +1670,7 @@ SendFrameByte:
 		btfsc	STATUS, Z
 		goto	SendByte
 
-		andlw	11011111b		; flag acknowledgement
+		iorlw	00100000b		; flag acknowledgement
 
 		incf	ACKcount, f
 
@@ -1511,7 +1694,7 @@ BitLoop:
 
 		andlw   ~(1<<SRX)		; load the next bit onto SRX
 		rlf		sendreg, 1		; load the next bit into the carry flag
-		btfsc	STATUS, C
+		btfss	STATUS, C
 		iorlw	(1<<SRX)
 		movwf	HPIO
 
@@ -1558,12 +1741,18 @@ SerialSend:
 
 	movf	SPIO, w
 
+;; Number of clock cycles (at 1us per clock) for 19.2Kbps serial send:
+;; 56us too slow, garbage
+;; 54us works
+;; 52us works - recommended setting
+;; 50us works
+;; 48us too fast, garbage
+
 	; initially send start bit
 LowBit:
 	iorlw	(1<<SerialTX)
 	movwf	SPIO			; 1
-	nop						; 1
-	call	Wait21
+	call	Wait22
 	call	Wait21
 
 BitCount:
@@ -1576,9 +1765,10 @@ BitCount:
 	goto	LowBit          ; 2
 
 	andlw	~(1<<SerialTX)  ; 1
+	nop
 	movwf	SPIO			; 1
 	call	Wait21
-	call	Wait21
+	call	Wait20
 	goto    BitCount        ; 2
 
 StopBit:
@@ -1589,6 +1779,7 @@ StopBit:
 	call	Wait22
 	call	Wait22
 	return
+
 
 ;--------------------------------------------------------------------------
 ; SerialSend9600 - Sends 9600bps 8 bit serial data using open drain bit 
@@ -1784,12 +1975,12 @@ StateIdle:
 		movlw	SECONDWAIT
 		movwf	secondcount		; stop display from ticking time
 		
-		movlw	0x74
+		movlw	0x8B
 		call	SendFrameByte
 		call	SendDisplayBytes
-		movlw	0x8F			; mutes audio on Monsoon head units
+		movlw	0x70			; mutes audio on Monsoon head units
 		call	SendByte
-		movlw	0x7C
+		movlw	0x83
 		goto	SendFrameByte
 
 StateIdleThenPlay:		
@@ -1814,7 +2005,7 @@ StateInitPlay:
 		movlw	SECONDWAIT
 		movwf	secondcount		; stop display from ticking time
 
-		movlw	0x34
+		movlw	0xCB
 		call	SendFrameByte
 
 		btfss	BIDIcount, 0
@@ -1822,11 +2013,11 @@ StateInitPlay:
 
 		call	SendDisplayBytes
 
-		movlw	0xEF
+		movlw	0x10
 		call	SendByte
 
 StateInitPlayEnd:				
-		movlw	0x3C
+		movlw	0xC3
 		call	SendFrameByte
 		
 		incfsz	BIDIcount, f
@@ -1835,25 +2026,25 @@ StateInitPlayEnd:
 		goto	SetStatePlayLeadIn
 		
 StateInitPlayAnnounceCD:		
-		;; 0x09..0x0F: CD-ROM Loaded (seen on changer)
-		;; 0x19..0x1F: CD-ROM Loaded. (made up)
-		;; 0x69..0x6F: Slot Empty (seen on changer)
-		;; 0x79..0x7F: Slot Empty (made up)
-		;; 0x29..0x2F: AUDIO CD Loaded. (seen on changer)
+		;; 0xF6..0xF0: CD-ROM Loaded (seen on changer)
+		;; 0xE6..0xE0: CD-ROM Loaded. (made up)
+		;; 0x96..0x90: Slot Empty (seen on changer)
+		;; 0x86..0x80: Slot Empty (made up)
+		;; 0xD6..0xD0: AUDIO CD Loaded. (seen on changer)
 		movf	discload, w
 		call	SendByte
 
-		movlw	0x29
+		movlw	0xD6
 		subwf	discload, w		; have we reached CD 6?
-		movlw	0x2E			; if so, loop back to CD 1
+		movlw	0xD1			; if so, loop back to CD 1
 		btfss	STATUS, Z
-		decf	discload, w		; if not, go to next CD number.
+		incf	discload, w		; if not, go to next CD number.
 
 		movwf	discload	
 
 		call	SendDisplayBytesInitCD
 
-		movlw	0xFF
+		movlw	0x00
 		call	SendByte
 
 		goto	StateInitPlayEnd
@@ -1871,7 +2062,7 @@ StatePlayLeadIn:
 		movlw	SECONDWAIT
 		movwf	secondcount		; stop display from ticking time
 
-		movlw	0x34
+		movlw	0xCB
 		call	SendFrameByte
 
 		btfss	BIDIcount, 0
@@ -1879,11 +2070,11 @@ StatePlayLeadIn:
 
 		call	SendDisplayBytes
 
-		movlw	0xAE
+		movlw	0x51
 		call	SendByte
 		
 StatePlayLeadInEnd:
-		movlw	0x3C
+		movlw	0xC3
 		call	SendFrameByte
 		
 		incfsz	BIDIcount, f
@@ -1894,12 +2085,12 @@ StatePlayLeadInEnd:
 StatePlayLeadInAnnounceCD
 		movf	disc, w
 		andlw	0x0F
-		iorlw	0x20
+		iorlw	0xD0
 		call	SendByte
 
 		call	SendDisplayBytesInitCD
 
-		movlw	0xFF
+		movlw	0x00
 		call	SendByte
 
 		goto	StatePlayLeadInEnd
@@ -1908,15 +2099,15 @@ StateTrackLeadIn:
 		movlw	SECONDWAIT
 		movwf	secondcount		; stop display from ticking time
 
-		movlw	0x34
+		movlw	0xCB
 		call	SendFrameByte
 
 		call	SendDisplayBytes
 
-		movlw	0xAE
+		movlw	0x51
 		call	SendByte
 
-		movlw	0x3C
+		movlw	0xC3
 		call	SendFrameByte
 		
 		incfsz	BIDIcount, f
@@ -1925,15 +2116,15 @@ StateTrackLeadIn:
 		goto	SetStatePlay
 
 StatePlay:
-		movlw	0x34
+		movlw	0xCB
 		call	SendFrameByte
 
 		call	SendDisplayBytes
 
-		movlw	0xCF
+		movlw	0x30
 		call	SendByte
 
-		movlw	0x3C
+		movlw	0xC3
 		goto	SendFrameByte
 			
 
@@ -1998,7 +2189,7 @@ sRING:
 	goto	EndString
 
 sIDENTIFYNEWLINE:		
-	dt		"VWCDPIC", VER_MAJOR, '.', VER_MINOR
+	dt		"VWCDPIC", VER_MAJOR, '.', VER_MINOR, VER_PATCHLEVEL
 
 sNEWLINE:		
 	dt		13, 10
@@ -2155,7 +2346,7 @@ archosLIST6:
 CommandVectorTable:		
 CMD00:	goto	Do_UNKNOWNCMD
 CMD04:	goto	Do_UNKNOWNCMD
-CMD08:	goto	Do_UNKNOWNCMD
+CMD08:	goto	Do_PLAY			; mix button held down (RCD300 head unit only)
 CMD0C:	goto	Do_CD1			; CD 1
 CMD10:	goto	Do_DISABLE		; DISABLE
 CMD14:  goto  	Do_CHANGECD		; Change CD (changer ignores & no ACK)
@@ -2178,7 +2369,7 @@ CMD50:	goto	Do_UNKNOWNCMD
 CMD54:	goto	Do_UNKNOWNCMD
 CMD58:	goto	Do_SEEKBACK		; SEEK BACK
 CMD5C:	goto	Do_UNKNOWNCMD
-CMD60:	goto	Do_MIX			; MIX 1
+CMD60:	goto	Do_MIX			; MIX 1 (mix tracks within one disc)
 CMD64:	goto	Do_UNKNOWNCMD
 CMD68:	goto	Do_UP			; UP (Mk3 head unit)
 CMD6C:	goto	Do_UNKNOWNCMD
@@ -2210,7 +2401,7 @@ CMDD0:	goto	Do_UNKNOWNCMD
 CMDD4:	goto	Do_UNKNOWNCMD
 CMDD8:	goto	Do_SEEKFORWARD	; Seek Forward
 CMDDC:	goto	Do_UNKNOWNCMD
-CMDE0:	goto	Do_MIX			; MIX 6
+CMDE0:	goto	Do_MIX			; MIX 6 (mix tracks across all discs)
 CMDE4:	goto	Do_ENABLE		; ENABLE
 CMDE8:	goto	Do_UNKNOWNCMD
 CMDEC:	goto	Do_UNKNOWNCMD
@@ -2221,8 +2412,9 @@ CMDFC:	goto	Do_UNKNOWNCMD
 		
 	;;; Copyright notice stored in EEPROM data memory.
 	ORG 2100h
-	de		"VWCDPIC Firmware v", VER_MAJOR, ".", VER_MINOR, "b\n"
-	de		"Copyright (c) 2002-2004, Edward Schlunder <ed@k9spud.com>\n"
+	de		"VWCDPIC Firmware v", VER_MAJOR, ".", VER_MINOR, VER_PATCHLEVEL, "\n"
+	de		"Copyright (c) 2002-2005, K9spud LLC.\n"
 	de		"Licensed under GNU General Public License v2.\n"
+	de		"www.k9spud.com\n"
 
 	END
