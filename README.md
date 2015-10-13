@@ -6,6 +6,12 @@ vwcdpic-2.8pre3.asm - laster sourcecode on internet, with my fixies
 	
 vwcdpic-3.x-2.7d-RCD300-1-pic12f629.hex is only version works with RCD300 head unit, if it works with other, for which 2.8 didnt, let me know please.
 
+for ipod support look <a href="https://web.archive.org/web/20090427105500/http://www.k9spud.com/vwcdpic/devel/vwcdpic3/flash/">here</a>
+
+<a href="https://web.archive.org/web/20090427105500/http://www.k9spud.com/vwcdpic/devel/vwcdpic-2.7d/ipod-vw-2.1.asm">iPod-VW Firmware v2.1 Source Code</a> - Use this for iPod 3G+ remote control support on most head units
+
+<a href="https://web.archive.org/web/20090427105500/http://www.k9spud.com/vwcdpic/devel/vwcdpic3/flash/ipod-vw-2.2/ipod-vw-2.2.ConcertII_G5-3.x.asm">iPod-VW Firmware v2.2-Concert II Source Code</a> - Use this for iPod 4G/5G remote control support on Audi Concert II head units 
+
 notes:
 -------
 2.8pre3
