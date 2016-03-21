@@ -3,7 +3,7 @@
   (general
     (links 26)
     (no_connects 0)
-    (area 137.579099 114.216179 152.529541 127.647701)
+    (area 134.285267 108.3056 162.509202 129.959)
     (thickness 1.6002)
     (drawings 6)
     (tracks 89)
@@ -19,7 +19,7 @@
 
   (layers
     (0 Front signal)
-    (31 Back signal hide)
+    (31 Back signal)
     (32 B.Adhes user hide)
     (33 F.Adhes user hide)
     (34 B.Paste user hide)
@@ -62,7 +62,7 @@
     (pad_drill 0)
     (pad_to_mask_clearance 0.254)
     (aux_axis_origin 0 0)
-    (visible_elements FFFEDBBF)
+    (visible_elements FFFEDFBF)
     (pcbplotparams
       (layerselection 0x0100f_80000001)
       (usegerberextensions false)
