@@ -302,10 +302,10 @@
 ; up too much code space to both fit inside the 12F629 at once.
 
 ; Archos Jukebox 9600 baud remote control support. 
-;#define ARCHOS_SUPPORT
+#define ARCHOS_SUPPORT
 
 ; 3rd Generation iPod 19.2Kbps remote control support.
-#define IPOD_SUPPORT
+;#define IPOD_SUPPORT
 
 ; Currently we only support the 3rd Generation iPod remote control
 ; protocol that runs at 19.2Kbps.
@@ -335,7 +335,7 @@
 ;--------------------------------------------------------------------------
 
 ;--------------------------------------------------------------------------
-; PIC12F629/PIC12F675 Connections v3 by jarex uncoment proper section down
+; PIC12F629/PIC12F675 Connections v3 uncoment proper section down
 ;--------------------------------------------------------------------------
 ; PIC GP0(pin 7) -> VW Pin 2 Clock  to Head Unit
 ; PIC GP1(pin 6) -> VW Pin 1 Data   to Head Unit
@@ -2507,7 +2507,7 @@ Wait15:	nop
 CommandVectorTable:		
 CMD00:	goto	Do_UNKNOWNCMD
 CMD04:	goto	Do_UNKNOWNCMD
-CMD08:	goto	Do_ENABLE		; fix audi concert1 switch cd->radio->cd
+CMD08:	goto	Do_MIX 		; fix audi concert1 switch cd->radio->cd
 CMD0C:	goto	Do_CD1			; CD 1
 CMD10:	goto	Do_DISABLE		; DISABLE
 CMD14:  goto  	Do_CHANGECD		; Change CD (changer ignores & no ACK) - NEXT CD on concert 1 - cant implepemnt, this command is sent after each "CD" button pressed
