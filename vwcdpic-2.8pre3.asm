@@ -277,7 +277,8 @@
 ;;; This code targets PIC12F629 chip by default, you can override with
 ;;; command line setting to assembler.
 	LIST P=12F629, R=DEC
-	__CONFIG _BODEN_ON & _MCLRE_OFF & _WDT_OFF & _PWRTE_ON & _CP_OFF & _INTRC_OSC_NOCLKOUT
+	#__CONFIG _BODEN_ON & _MCLRE_OFF & _WDT_OFF & _PWRTE_ON & _CP_OFF & _INTRC_OSC_NOCLKOUT
+	__CONFIG _BODEN_ON & _WDT_OFF & _PWRTE_ON & _CP_OFF & _INTRC_OSC_NOCLKOUT
 
 	IFDEF __12F629
 #include <p12f629.inc>
