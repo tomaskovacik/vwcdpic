@@ -1,0 +1,9 @@
+"Id";"Designator";"Package";"Quantity";"Designation";"Supplier and ref";
+1;"RADIO1";"Pin_Header_Straight_1x05";1;"CONN_01X05";;;
+2;"ICSP_UART1";"Pin_Header_Straight_1x04";1;"CONN_01X04";;;
+3;"C3,C2";"C_Rect_L7_W2.5_P5";2;"100n";;;
+4;"U2";"TO92-STABIL";1;"LM78L05ACZ";;;
+5;"U1";"DIP-8__300_ELL";1;"PIC12F629";;;
+6;"R7,R6,R5";"Resistor_Horizontal_RM10mm";3;"3k3";;;
+7;"C1";"C_Radial_D5_L11_P2.5";1;"1uF/6.3V";;;
+8;"R1";"Resistor_Horizontal_RM10mm";1;"10k";;;
