@@ -277,7 +277,6 @@
 ;;; This code targets PIC12F629 chip by default, you can override with
 ;;; command line setting to assembler.
 	LIST P=12F629, R=DEC
-	#__CONFIG _BODEN_ON & _MCLRE_OFF & _WDT_OFF & _PWRTE_ON & _CP_OFF & _INTRC_OSC_NOCLKOUT
 	__CONFIG _BODEN_ON & _WDT_OFF & _PWRTE_ON & _CP_OFF & _INTRC_OSC_NOCLKOUT
 
 	IFDEF __12F629
@@ -303,10 +302,10 @@
 ; up too much code space to both fit inside the 12F629 at once.
 
 ; Archos Jukebox 9600 baud remote control support. 
-;#define ARCHOS_SUPPORT
+#define ARCHOS_SUPPORT
 
 ; 3rd Generation iPod 19.2Kbps remote control support.
-#define IPOD_SUPPORT
+;#define IPOD_SUPPORT
 
 ; Currently we only support the 3rd Generation iPod remote control
 ; protocol that runs at 19.2Kbps.
@@ -2508,7 +2507,7 @@ Wait15:	nop
 CommandVectorTable:		
 CMD00:	goto	Do_UNKNOWNCMD
 CMD04:	goto	Do_UNKNOWNCMD
-CMD08:	goto	Do_ENABLE		; fix audi concert1 switch cd->radio->cd
+CMD08:	goto	Do_MIX 		; fix audi concert1 switch cd->radio->cd
 CMD0C:	goto	Do_CD1			; CD 1
 CMD10:	goto	Do_DISABLE		; DISABLE
 CMD14:  goto  	Do_CHANGECD		; Change CD (changer ignores & no ACK) - NEXT CD on concert 1 - cant implepemnt, this command is sent after each "CD" button pressed
