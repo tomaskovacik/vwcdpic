@@ -336,7 +336,7 @@
 ;--------------------------------------------------------------------------
 
 ;--------------------------------------------------------------------------
-; PIC12F629/PIC12F675 Connections v3 by jarex uncoment proper section down
+; PIC12F629/PIC12F675 Connections v3 uncoment proper section down
 ;--------------------------------------------------------------------------
 ; PIC GP0(pin 7) -> VW Pin 2 Clock  to Head Unit
 ; PIC GP1(pin 6) -> VW Pin 1 Data   to Head Unit
