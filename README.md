@@ -27,31 +27,50 @@ notes:
 	- VW Passat Blaupunkt Gamma (similar to Gamma V)
 	- Audi Symphony II BOSE
 	- original project <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units">list</a>
+	
 		- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Volkswagen"><span class="tocnumber">1 <span class="toctext">Volkswagen</a>
-<ul>
+		
 			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#New_Beetle">New Beetle</a>
+			
 			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Touareg">Touareg</a>
+			
 			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Passat_B3.2FB4_.281993.2B.29">Passat B3/B4 (1993+)</a>
+			
 			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#EOS_3.2_.282008.29">EOS 3.2 (2008)</a>
+			
 			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Single_DIN_Monsoon">Single DIN Monsoon</a>
+			
 			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Single_DIN_Monsoon_with_In-Dash_CD_Player">Single DIN Monsoon with In-Dash CD Player</a>
+			
 			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Double_DIN_Monsoon">Double DIN Monsoon</a>
+			
 			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Multi-Function_Display_.28MFD.29">Multi-Function Display (MFD)</a>
+			
 			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Gamma_IV">Gamma IV</a>
+			
 			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Gamma_V">Gamma V</a>
+			
 			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#RCD300">RCD300</a>
+			
 			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Blaupunkt_R100">Blaupunkt R100</a>
+			
 			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#RNS300">RNS300</a>
+			
 			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#RN_S2_DVD">RN S2 DVD</a>
 
 		- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Seat">Seat</a>
+		
 			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Leon">Leon</a>
+			
 			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Ibiza">Ibiza</a>
+			
 
 		- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Skoda"><span class="tocnumber">3 <span class="toctext">Skoda</a>
+		
 			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Symphony">Symphony</a>
 
 		- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Audi"><span class="tocnumber">4 <span class="toctext">Audi</a>
+		
 			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Audi_Chorus_II">Audi Chorus II</a>
 
 
