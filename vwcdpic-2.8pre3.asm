@@ -1520,6 +1520,13 @@ Do_CD6:
 	call	EnqueueString
 	goto	EnqueueNEWLINE
 
+Do_TP:
+        btfsc   progflags, playing
+        call    SetStateTP   ; skip this if we're already in idle mode
+	movlw   low sTP
+	call	EnqueueString
+	goto	EnqueueNEWLINE
+
 ;--------------------------------------------------------------------------
 ; GetCaptureByte
 ; Returns: STATUS Z bit set - no more bytes to collect
@@ -1558,6 +1565,16 @@ SetStateIdle:
 
 		movlw	low StateIdle
 		movwf	BIDIstate
+		return
+
+
+;;; TP State
+;;; B4 BE EF FE DB FF DF BC
+;;; ...
+SetStateTP:
+		bcf             progflags, playing
+		movlw   low StateTP
+		movwf   BIDIstate
 		return
 
 ;;; Real CD Changer doesn't really do this, but we're gonna do it to try
@@ -2052,6 +2069,16 @@ StateIdle:
 		movlw	0x7C
 		goto	SendFrameByte
 
+StateTP:
+                movlw   0xB4
+                call    SendFrameByte
+                call    SendDisplayBytes
+                movlw   0xDF                    ; mutes audio on Monsoon head units
+                call    SendByte
+                movlw   0xBC
+                goto    SendFrameByte
+
+
 StateIdleThenPlay:		
 		incfsz	BIDIcount, f
 		goto	StateIdle
@@ -2287,7 +2314,9 @@ sE:	dt		'E'
 sF:	dt		'F'
 	goto	EndString
 sDASH:	dt		'-'
-		goto	EndString
+	goto	EndString
+sTP:	dt		"TP"
+	goto	EndString
 		
 ;--------------------------------------------------------------------------
 ; Archos Jukebox Serial Commands
@@ -2517,7 +2546,7 @@ CMD20:	goto	Do_UNKNOWNCMD
 CMD24:	goto	Do_UNKNOWNCMD
 CMD28:	goto	Do_UNKNOWNCMD
 CMD2C:	goto	Do_CD5			; CD 5
-CMD30:	goto	Do_UNKNOWNCMD
+CMD30:	goto	Do_TP			; "TP" info
 CMD34:	goto	Do_UNKNOWNCMD
 CMD38:	goto	Do_LOADCD		; LOAD CD (aka MINQUIRY). 
 								; Also means "Next CD" if no CD button pressed
