@@ -2536,7 +2536,7 @@ Wait15:	nop
 CommandVectorTable:		
 CMD00:	goto	Do_UNKNOWNCMD
 CMD04:	goto	Do_UNKNOWNCMD
-CMD08:	goto	Do_MIX 		; fix audi concert1 switch cd->radio->cd
+CMD08:	goto	Do_ENABLE		; fix audi concert1 switch cd->radio->cd
 CMD0C:	goto	Do_CD1			; CD 1
 CMD10:	goto	Do_DISABLE		; DISABLE
 CMD14:  goto  	Do_CHANGECD		; Change CD (changer ignores & no ACK) - NEXT CD on concert 1 - cant implepemnt, this command is sent after each "CD" button pressed
