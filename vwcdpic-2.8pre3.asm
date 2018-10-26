@@ -1520,9 +1520,10 @@ Do_CD6:
 	call	EnqueueString
 	goto	EnqueueNEWLINE
 
-Do_TP:
-        btfsc   progflags, playing
-        call    SetStateTP   ; skip this if we're already in idle mode
+Do_TP:	
+	btfss   progflags, playing    ; if playing skip next instruction
+	goto    Do_ENABLE            ; skip this if we're already in play mode (playing==1);
+        call    SetStateTP 	      ; set playing=0; bidi=P
 	movlw   low sTP
 	call	EnqueueString
 	goto	EnqueueNEWLINE
@@ -1561,7 +1562,7 @@ GetCaptureByte:
 ;;; 74 BE FE FF FF FF 8F 7C
 ;;; ...
 SetStateIdle:
-		bcf		progflags, playing
+		bcf	progflags, playing
 
 		movlw	low StateIdle
 		movwf	BIDIstate
@@ -1572,7 +1573,7 @@ SetStateIdle:
 ;;; B4 BE EF FE DB FF DF BC
 ;;; ...
 SetStateTP:
-		bcf             progflags, playing
+		bcf     progflags, playing
 		movlw   low StateTP
 		movwf   BIDIstate
 		return
@@ -1591,7 +1592,7 @@ SetStateIdleThenPlay:
 		return
 
 SetStatePlay:
-		bsf		progflags, playing
+		bsf	progflags, playing
 
 		movlw	low StatePlay
 		movwf	BIDIstate
