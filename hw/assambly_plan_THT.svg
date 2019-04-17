@@ -28,9 +28,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="229.71998"
-     inkscape:cy="462.17338"
+     inkscape:zoom="1.2837891"
+     inkscape:cx="407.54157"
+     inkscape:cy="351.28585"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -47,7 +47,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -2112,7 +2112,7 @@
          sodipodi:role="line"
          x="625.87933"
          y="528.42883"
-         id="tspan18514">DataOut - PRG_CLK</tspan><tspan
+         id="tspan18514">DataIn - PRG_CLK</tspan><tspan
          sodipodi:role="line"
          x="625.87933"
          y="562.67224"
