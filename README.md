@@ -30,7 +30,7 @@ notes:
 	- Audi Symphony II BOSE
 	- original project <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units">list</a>
 	
-		- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Volkswagen"><span class="tocnumber">1 <span class="toctext">Volkswagen</a>
+		- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Volkswagen">Volkswagen</a>
 		
 			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#New_Beetle">New Beetle</a>
 			
@@ -67,11 +67,11 @@ notes:
 			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Ibiza">Ibiza</a>
 			
 
-		- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Skoda"><span class="tocnumber">3 <span class="toctext">Skoda</a>
+		- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Skoda">Skoda</a>
 		
 			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Symphony">Symphony</a>
 
-		- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Audi"><span class="tocnumber">4 <span class="toctext">Audi</a>
+		- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Audi">Audi</a>
 		
 			- <a href="https://web.archive.org/web/20110811154456/http://www.k9spud.com/wiki/VWCDPIC:Compatible_Head_Units#Audi_Chorus_II">Audi Chorus II</a>
 
