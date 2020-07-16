@@ -2,3 +2,6 @@
 *bak
 *.cod
 *.lst
+fp-info-cache
+*_back
+*_bak
