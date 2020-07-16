@@ -44,9 +44,9 @@
      inkscape:window-height="1056"
      id="namedview4479"
      showgrid="false"
-     inkscape:zoom="2.5372277"
-     inkscape:cx="634.60505"
-     inkscape:cy="255.35345"
+     inkscape:zoom="0.5816545"
+     inkscape:cx="344.91779"
+     inkscape:cy="339.46527"
      inkscape:current-layer="svg4257"
      inkscape:window-x="65"
      inkscape:window-y="24"
@@ -107,66 +107,66 @@
        id="tspan13586" /></text>
   <text
      xml:space="preserve"
-     style="font-size:2915.69140625px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-     x="11519.659"
-     y="23243.805"
+     style="font-style:normal;font-weight:normal;font-size:2915.69140625px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="7699.1357"
+     y="23052.779"
      id="text13885"
      sodipodi:linespacing="125%"><tspan
        sodipodi:role="line"
        id="tspan13887"
-       x="11519.659"
-       y="23243.805">R1            10k (0805)</tspan><tspan
+       x="7699.1357"
+       y="23052.779">R1            10k (0805)</tspan><tspan
        sodipodi:role="line"
-       x="11519.659"
-       y="26888.418"
+       x="7699.1357"
+       y="26697.393"
        id="tspan13889">R5,6,7      3k3 (0805)</tspan><tspan
        sodipodi:role="line"
-       x="11519.659"
-       y="30533.033"
+       x="7699.1357"
+       y="30342.008"
        id="tspan13891">C1            1u (1206)</tspan><tspan
        sodipodi:role="line"
-       x="11519.659"
-       y="34177.648"
+       x="7699.1357"
+       y="33986.621"
        id="tspan13895">C2,3         100n (0805)</tspan><tspan
        sodipodi:role="line"
-       x="11519.659"
-       y="37822.262"
+       x="7699.1357"
+       y="37631.234"
        id="tspan13897" /><tspan
        sodipodi:role="line"
-       x="11519.659"
-       y="41466.875"
+       x="7699.1357"
+       y="41275.848"
        id="tspan13899">U1            PIC12F629 (SO8)</tspan><tspan
        sodipodi:role="line"
-       x="11519.659"
-       y="45111.492"
+       x="7699.1357"
+       y="44920.465"
        id="tspan13901">U2            AM1117-5.0 (SOT-223)</tspan><tspan
        sodipodi:role="line"
-       x="11519.659"
-       y="48756.105"
+       x="7699.1357"
+       y="48565.078"
        id="tspan13905">or</tspan><tspan
        sodipodi:role="line"
-       x="11519.659"
-       y="52400.719"
+       x="7699.1357"
+       y="52209.691"
        id="tspan4419">U3            78L05 (SOT-23)</tspan><tspan
        sodipodi:role="line"
-       x="11519.659"
-       y="56045.332"
+       x="7699.1357"
+       y="55854.305"
        id="tspan13893" /></text>
   <text
      xml:space="preserve"
-     style="font-size:5699.89794922px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-     x="18301.279"
-     y="11018.167"
+     style="font-style:normal;font-weight:normal;font-size:5699.89794922px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="14480.756"
+     y="10827.141"
      id="text13907"
      sodipodi:linespacing="125%"><tspan
        sodipodi:role="line"
        id="tspan13909"
-       x="18301.279"
-       y="11018.167">VWCPIC PCB version 3.0</tspan></text>
+       x="14480.756"
+       y="10827.141">VWCPIC PCB version 3.0</tspan></text>
   <g
      style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-width:150;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g4267"
-     transform="matrix(-3.7446848,0,0,3.7446848,286864.07,-136178.34)">
+     transform="matrix(-3.7446848,0,0,3.7446848,283043.55,-136369.37)">
     <path
        d="m 59976,50180 -5736,0"
        id="path4269"
@@ -191,7 +191,7 @@
   <g
      style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g4279"
-     transform="matrix(-3.7446848,0,0,3.7446848,286864.07,-136178.34)">
+     transform="matrix(-3.7446848,0,0,3.7446848,283043.55,-136369.37)">
     <polyline
        style="fill:#9b9b9b;fill-opacity:1;fill-rule:evenodd;stroke:#9b9b9b;stroke-opacity:1"
        points="59815,50001 58830,50001 58830,49214 59815,49214 59815,50001 "
@@ -200,7 +200,7 @@
   <g
      style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-width:787.40197754;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g4285"
-     transform="matrix(-3.7446848,0,0,3.7446848,286864.07,-136178.34)">
+     transform="matrix(-3.7446848,0,0,3.7446848,283043.55,-136369.37)">
     <path
        d="m 59224,48608 197,0"
        id="path4287"
@@ -225,7 +225,7 @@
   <g
      style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g4297"
-     transform="matrix(-3.7446848,0,0,3.7446848,286864.07,-136178.34)">
+     transform="matrix(-3.7446848,0,0,3.7446848,283043.55,-136369.37)">
     <polyline
        style="fill:#9b9b9b;fill-opacity:1;fill-rule:evenodd;stroke:#9b9b9b;stroke-opacity:1"
        points="57667,45585 57667,46372 57392,46372 57392,45585 57667,45585 "
@@ -266,7 +266,7 @@
   <g
      style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-width:680;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g4319"
-     transform="matrix(-3.7446848,0,0,3.7446848,286864.07,-136178.34)">
+     transform="matrix(-3.7446848,0,0,3.7446848,283043.55,-136369.37)">
     <path
        d="m 54900,48600 -120,0"
        id="path4321"
@@ -286,7 +286,7 @@
   <g
      style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g4329"
-     transform="matrix(-3.7446848,0,0,3.7446848,286864.07,-136178.34)">
+     transform="matrix(-3.7446848,0,0,3.7446848,283043.55,-136369.37)">
     <polyline
        style="fill:#9b9b9b;fill-opacity:1;fill-rule:evenodd;stroke:#9b9b9b;stroke-opacity:1"
        points="55584,48928 56095,48928 56095,49203 55584,49203 55584,48928 "
@@ -329,7 +329,7 @@
   <g
      style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g4351"
-     transform="matrix(-3.7446848,0,0,3.7446848,286864.07,-136178.34)">
+     transform="matrix(-3.7446848,0,0,3.7446848,283043.55,-136369.37)">
     <circle
        cx="57186"
        cy="49020"
@@ -340,7 +340,7 @@
   <g
      style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g4363"
-     transform="matrix(-3.7446848,0,0,3.7446848,286864.07,-136178.34)">
+     transform="matrix(-3.7446848,0,0,3.7446848,283043.55,-136369.37)">
     <circle
        cx="55686"
        cy="46866"
@@ -351,7 +351,7 @@
   <g
      style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g4369"
-     transform="matrix(-3.7446848,0,0,3.7446848,286864.07,-136178.34)">
+     transform="matrix(-3.7446848,0,0,3.7446848,283043.55,-136369.37)">
     <circle
        cx="56520"
        cy="45340"
@@ -362,7 +362,7 @@
   <g
      style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-width:240;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g4377"
-     transform="matrix(-3.7446848,0,0,3.7446848,286864.07,-136178.34)">
+     transform="matrix(-3.7446848,0,0,3.7446848,283043.55,-136369.37)">
     <path
        d="m 56450,46994 524,0"
        id="path4379"
@@ -607,14 +607,14 @@
   <g
      style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-width:100;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g4475"
-     transform="matrix(-3.7446848,0,0,3.7446848,286864.07,-136178.34)">
+     transform="matrix(-3.7446848,0,0,3.7446848,283043.55,-136369.37)">
     <polyline
        style="fill:#9b9b9b;fill-opacity:1;fill-rule:evenodd;stroke:#9b9b9b;stroke-opacity:1"
        points="58709,45816 58719,45830 58525,46023 58044,46023 57985,46034 57935,46068 57917,46095 57917,46091 57855,46028 57580,46028 57580,46560 57642,46622 57717,46622 57809,46584 57879,46514 57895,46475 57902,46510 57935,46559 57985,46593 58044,46604 58555,46604 58614,46593 58632,46580 58675,46572 58668,46608 58709,46816 58827,46992 59000,47108 58827,47223 58709,47399 58668,47608 58709,47816 58827,47992 58909,48047 58730,48189 58608,48410 58598,48458 58645,48558 59273,48558 59273,48550 59373,48550 59373,48558 59380,48558 59380,48658 59373,48658 59373,48665 59273,48665 59273,48658 58645,48658 58598,48757 58608,48805 58730,49026 58785,49070 58772,49073 58722,49106 58689,49155 58677,49214 58677,49955 58232,49955 58239,49947 58277,49855 58277,49672 58214,49610 57782,49610 57782,49617 57682,49617 57682,49610 57674,49610 57674,49510 57682,49510 57682,49126 57782,49126 57782,49510 58214,49510 58277,49447 58277,49264 58239,49172 58169,49101 58077,49063 57844,49063 57782,49126 57682,49126 57619,49063 57523,49063 57708,48879 57726,48876 57775,48842 57809,48793 57820,48734 57820,47947 57809,47888 57800,47875 57800,47750 57787,47686 57779,47646 57720,47559 57470,47308 57470,47220 57454,47141 57449,47116 57390,47029 57378,47021 57370,47009 57164,46803 57077,46744 56974,46724 56561,46724 56527,46689 56527,46681 56477,46562 56441,46525 56667,46525 56726,46513 56775,46480 56780,46474 56784,46480 56833,46513 56892,46525 57167,46525 57187,46521 57250,46584 57342,46622 57417,46622 57480,46560 57480,46028 57472,46028 57472,45928 57480,45928 57480,45921 57580,45921 57580,45928 57855,45928 57917,45866 57917,45784 57935,45811 57985,45845 58044,45856 58555,45856 58614,45845 58664,45811 58697,45762 58698,45757 58709,45816 "
        id="polyline4477" />
   </g>
   <g
-     transform="matrix(3.7446848,0,0,3.7446848,-140896.32,-114032.55)"
+     transform="matrix(3.7446848,0,0,3.7446848,-144716.84,-114223.58)"
      style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-width:150;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g4495">
     <path
@@ -639,7 +639,7 @@
        style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-opacity:1" />
   </g>
   <g
-     transform="matrix(3.7446848,0,0,3.7446848,-140896.32,-114032.55)"
+     transform="matrix(3.7446848,0,0,3.7446848,-144716.84,-114223.58)"
      style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g4507">
     <polyline
@@ -648,7 +648,7 @@
        id="polyline4509" />
   </g>
   <g
-     transform="matrix(3.7446848,0,0,3.7446848,-140896.32,-114032.55)"
+     transform="matrix(3.7446848,0,0,3.7446848,-144716.84,-114223.58)"
      style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-width:787.40197754;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g4513">
     <path
@@ -673,7 +673,7 @@
        style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-opacity:1" />
   </g>
   <g
-     transform="matrix(3.7446848,0,0,3.7446848,-140896.32,-114032.55)"
+     transform="matrix(3.7446848,0,0,3.7446848,-144716.84,-114223.58)"
      style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g4525">
     <polyline
@@ -682,7 +682,7 @@
        id="polyline4527" />
   </g>
   <g
-     transform="matrix(3.7446848,0,0,3.7446848,-140896.32,-114032.55)"
+     transform="matrix(3.7446848,0,0,3.7446848,-144716.84,-114223.58)"
      style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-width:680;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g4531">
     <path
@@ -702,7 +702,7 @@
        style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-opacity:1" />
   </g>
   <g
-     transform="matrix(3.7446848,0,0,3.7446848,-140896.32,-114032.55)"
+     transform="matrix(3.7446848,0,0,3.7446848,-144716.84,-114223.58)"
      style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g4541">
     <polyline
@@ -765,7 +765,7 @@
        style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-opacity:1" />
   </g>
   <g
-     transform="matrix(3.7446848,0,0,3.7446848,-140896.32,-114032.55)"
+     transform="matrix(3.7446848,0,0,3.7446848,-144716.84,-114223.58)"
      style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g4573">
     <circle
@@ -776,7 +776,7 @@
        style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-opacity:1" />
   </g>
   <g
-     transform="matrix(3.7446848,0,0,3.7446848,-140896.32,-114032.55)"
+     transform="matrix(3.7446848,0,0,3.7446848,-144716.84,-114223.58)"
      style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g4579">
     <circle
@@ -787,7 +787,7 @@
        style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-opacity:1" />
   </g>
   <g
-     transform="matrix(3.7446848,0,0,3.7446848,-140896.32,-114032.55)"
+     transform="matrix(3.7446848,0,0,3.7446848,-144716.84,-114223.58)"
      style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g4585">
     <circle
@@ -798,7 +798,7 @@
        style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-opacity:1" />
   </g>
   <g
-     transform="matrix(3.7446848,0,0,3.7446848,-140896.32,-114032.55)"
+     transform="matrix(3.7446848,0,0,3.7446848,-144716.84,-114223.58)"
      style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g4591">
     <circle
@@ -809,7 +809,7 @@
        style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-opacity:1" />
   </g>
   <g
-     transform="matrix(3.7446848,0,0,3.7446848,-140896.32,-114032.55)"
+     transform="matrix(3.7446848,0,0,3.7446848,-144716.84,-114223.58)"
      style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-width:240;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g4599">
     <path
@@ -994,7 +994,7 @@
        style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-opacity:1" />
   </g>
   <g
-     transform="matrix(3.7446848,0,0,3.7446848,-140896.32,-114032.55)"
+     transform="matrix(3.7446848,0,0,3.7446848,-144716.84,-114223.58)"
      style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-width:100;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g4673">
     <polyline
@@ -1007,7 +1007,7 @@
        id="polyline4677" />
   </g>
   <g
-     transform="matrix(-3.7446848,0,0,3.7446848,286774.05,-136235.81)"
+     transform="matrix(-3.7446848,0,0,3.7446848,282953.53,-136426.84)"
      style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:50;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g12212">
     <path
@@ -1044,7 +1044,7 @@
        id="path12228" />
   </g>
   <g
-     transform="matrix(-3.7446848,0,0,3.7446848,286774.05,-136235.81)"
+     transform="matrix(-3.7446848,0,0,3.7446848,282953.53,-136426.84)"
      style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:59.05509949;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g12230">
     <path
@@ -1082,7 +1082,7 @@
   </g>
   <g
      id="g13578"
-     transform="matrix(-3.7446848,0,0,3.7446848,286862.48,-136178.34)">
+     transform="matrix(-3.7446848,0,0,3.7446848,283041.96,-136369.37)">
     <g
        id="g12248"
        style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:60;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
@@ -1103,7 +1103,7 @@
   </g>
   <g
      id="g13564"
-     transform="matrix(-3.7446848,0,0,3.7446848,286864.07,-136178.34)">
+     transform="matrix(-3.7446848,0,0,3.7446848,283043.55,-136369.37)">
     <g
        id="g4357"
        style="fill:#9b9b9b;fill-opacity:1;stroke:#9b9b9b;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1">
@@ -1137,7 +1137,7 @@
   </g>
   <g
      id="g13559"
-     transform="matrix(-3.7446848,0,0,-3.7446848,286865.11,207891.94)">
+     transform="matrix(-3.7446848,0,0,-3.7446848,283044.59,207700.91)">
     <path
        inkscape:connector-curvature="0"
        d="m 58389.039,45803.654 92,131"
@@ -1157,21 +1157,21 @@
   <path
      style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:147.42861938;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="path12272"
-     d="m 80072.238,34087.442 490.555,-344.511"
+     d="m 76251.715,33896.416 490.555,-344.511"
      inkscape:connector-curvature="0" />
   <path
      style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:147.42861938;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="path12274"
-     d="m 80072.238,33495.782 1029.788,0 0,393.191 -48.68,97.363 -48.681,48.681 -97.361,52.425 -146.044,0 -101.106,-52.425 -48.68,-48.681 -48.681,-97.363 0,-393.191"
+     d="m 76251.715,33304.756 1029.788,0 0,393.191 -48.68,97.363 -48.681,48.681 -97.361,52.425 -146.044,0 -101.106,-52.425 -48.68,-48.681 -48.681,-97.363 0,-393.191"
      inkscape:connector-curvature="0" />
   <path
      style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:147.42861938;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="path12276"
-     d="m 81102.026,34428.209 0,689.021 -1029.788,-441.872"
+     d="m 77281.503,34237.183 0,689.021 -1029.788,-441.872"
      inkscape:connector-curvature="0" />
   <g
      id="g13572"
-     transform="matrix(0,3.7446844,3.7446852,0,-113118.39,-169609.59)">
+     transform="matrix(0,3.7446844,3.7446852,0,-116938.91,-169800.62)">
     <g
        id="g12278"
        style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:59.05509949;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
@@ -1191,7 +1191,7 @@
     </g>
   </g>
   <g
-     transform="matrix(3.7446848,0,0,3.7446848,-140664.4,-114032.55)"
+     transform="matrix(3.7446848,0,0,3.7446848,-144484.92,-114223.58)"
      style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:59.05509949;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g12028">
     <path
@@ -1276,7 +1276,7 @@
        id="path12068" />
   </g>
   <g
-     transform="matrix(3.7446848,0,0,3.7446848,-140664.4,-114032.55)"
+     transform="matrix(3.7446848,0,0,3.7446848,-144484.92,-114223.58)"
      style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:80;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g12070">
     <path
@@ -1313,7 +1313,7 @@
        id="path12086" />
   </g>
   <g
-     transform="matrix(3.7446848,0,0,3.7446848,-140664.4,-114032.55)"
+     transform="matrix(3.7446848,0,0,3.7446848,-144484.92,-114223.58)"
      style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:59.05509949;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g12088">
     <path
@@ -1454,7 +1454,7 @@
        id="path12156" />
   </g>
   <g
-     transform="matrix(3.7446848,0,0,3.7446848,-140664.4,-114032.55)"
+     transform="matrix(3.7446848,0,0,3.7446848,-144484.92,-114223.58)"
      style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:39.37009811;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g12158">
     <path
@@ -1487,7 +1487,7 @@
        id="path12172" />
   </g>
   <g
-     transform="matrix(3.7446848,0,0,3.7446848,-140664.4,-114032.55)"
+     transform="matrix(3.7446848,0,0,3.7446848,-144484.92,-114223.58)"
      style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:80;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g12174">
     <path
@@ -1500,7 +1500,7 @@
        id="path12178" />
   </g>
   <g
-     transform="matrix(3.7446848,0,0,3.7446848,-140664.4,-114032.55)"
+     transform="matrix(3.7446848,0,0,3.7446848,-144484.92,-114223.58)"
      style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:59.05509949;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="g12180">
     <path
@@ -1515,34 +1515,34 @@
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:2915.69116211px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-     x="84772.586"
-     y="58293.309"
+     x="80952.062"
+     y="58102.281"
      id="text13911"
      sodipodi:linespacing="125%"><tspan
        sodipodi:role="line"
        id="tspan13913"
-       x="84772.586"
-       y="58293.309">CLK/PRG_DATA</tspan><tspan
+       x="80952.062"
+       y="58102.281">CLK (YELLOW)</tspan><tspan
        sodipodi:role="line"
-       x="84772.586"
-       y="61937.922"
-       id="tspan13915">DataIn/PRG_CLK</tspan><tspan
+       x="80952.062"
+       y="61746.895"
+       id="tspan13915">DataIn (WHITE)</tspan><tspan
        sodipodi:role="line"
-       x="84772.586"
-       y="65582.539"
-       id="tspan13917">DataOut</tspan><tspan
+       x="80952.062"
+       y="65391.512"
+       id="tspan13917">DataOut (BLUE)</tspan><tspan
        sodipodi:role="line"
-       x="84772.586"
-       y="69227.148"
-       id="tspan13919">GND</tspan><tspan
+       x="80952.062"
+       y="69036.125"
+       id="tspan13919">GND (BLACK/BROWN)</tspan><tspan
        sodipodi:role="line"
-       x="84772.586"
-       y="72871.766"
+       x="80952.062"
+       y="72680.742"
        id="tspan13921">ACC/CONTROL/</tspan><tspan
        sodipodi:role="line"
-       x="84772.586"
-       y="76516.375"
-       id="tspan14218">switched +12V</tspan></text>
+       x="80952.062"
+       y="76325.352"
+       id="tspan14218">switched +12V (RED)</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:2915.69116211px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
@@ -1553,49 +1553,49 @@
        sodipodi:role="line"
        id="tspan14222"
        x="49148.508"
-       y="61740.805">ARCHOS</tspan><tspan
+       y="61740.805" /><tspan
        sodipodi:role="line"
        x="49148.508"
        y="65385.418"
-       id="tspan14224">PJRC</tspan><tspan
+       id="tspan14224" /><tspan
        sodipodi:role="line"
        x="49148.508"
        y="69030.031"
-       id="tspan14226">RESET</tspan><tspan
+       id="tspan14226" /><tspan
        sodipodi:role="line"
        x="49148.508"
        y="72674.648"
-       id="tspan14228">+5V</tspan></text>
+       id="tspan14228" /></text>
   <text
      xml:space="preserve"
-     style="font-size:2308.90209961px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-     x="11121.602"
-     y="59511.164"
+     style="font-style:normal;font-weight:normal;font-size:2308.90209961px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="7301.0781"
+     y="59320.137"
      id="text4403"
      sodipodi:linespacing="125%"><tspan
        sodipodi:role="line"
        id="tspan4405"
-       x="11121.602"
-       y="59511.164">for programing use pins:</tspan><tspan
+       x="7301.0781"
+       y="59320.137">for programing use pins:</tspan><tspan
        sodipodi:role="line"
-       x="11121.602"
-       y="62397.293"
+       x="7301.0781"
+       y="62206.266"
        id="tspan4407">PRG_DATA</tspan><tspan
        sodipodi:role="line"
-       x="11121.602"
-       y="65283.418"
+       x="7301.0781"
+       y="65092.391"
        id="tspan4409">PRG_CLK</tspan><tspan
        sodipodi:role="line"
-       x="11121.602"
-       y="68169.555"
+       x="7301.0781"
+       y="67978.523"
        id="tspan4411">GND</tspan><tspan
        sodipodi:role="line"
-       x="11121.602"
-       y="71055.68"
+       x="7301.0781"
+       y="70864.648"
        id="tspan4413">RESET</tspan><tspan
        sodipodi:role="line"
-       x="11121.602"
-       y="73941.805"
+       x="7301.0781"
+       y="73750.781"
        id="tspan4415">+5V</tspan></text>
   <text
      xml:space="preserve"

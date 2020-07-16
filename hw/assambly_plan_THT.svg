@@ -28,9 +28,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.2837891"
-     inkscape:cx="407.54157"
-     inkscape:cy="351.28585"
+     inkscape:zoom="0.58861229"
+     inkscape:cx="728.99429"
+     inkscape:cy="247.51469"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -370,7 +370,7 @@
        id="g9145" />
     <g
        id="g18151"
-       transform="translate(111.11678,34.345186)">
+       transform="translate(15.977754,36.044097)">
       <g
          id="g8731"
          style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:150;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
@@ -2080,51 +2080,33 @@
          id="tspan18486"
          x="113.13709"
          y="462.43314" /></text>
-    <flowRoot
-       xml:space="preserve"
-       id="flowRoot18496"
-       style="font-style:normal;font-weight:normal;font-size:12.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       transform="matrix(1.3362432,0,0,1.3362432,-36.236994,276.96008)"><flowRegion
-         id="flowRegion18498"><rect
-           id="rect18500"
-           width="187.88837"
-           height="119.198"
-           x="90.913727"
-           y="148.10448" /></flowRegion><flowPara
-         id="flowPara18502"
-         style="font-size:20px">ARCHOS</flowPara><flowPara
-         style="font-size:20px"
-         id="flowPara18504">PJRC</flowPara><flowPara
-         style="font-size:20px"
-         id="flowPara18506">RESET</flowPara><flowPara
-         style="font-size:20px"
-         id="flowPara18508">+5V</flowPara></flowRoot>    <text
+    <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:27.39474297px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="625.87933"
-       y="494.18539"
+       x="530.7403"
+       y="495.88431"
        id="text18510"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan18512"
-         x="625.87933"
-         y="494.18539">CLK - PRG_DATA</tspan><tspan
+         x="530.7403"
+         y="495.88431">CLK (YELLOW)</tspan><tspan
          sodipodi:role="line"
-         x="625.87933"
-         y="528.42883"
-         id="tspan18514">DataIn - PRG_CLK</tspan><tspan
+         x="530.7403"
+         y="530.12775"
+         id="tspan18514">DataIn (WHITE)</tspan><tspan
          sodipodi:role="line"
-         x="625.87933"
-         y="562.67224"
-         id="tspan18516">DataOut</tspan><tspan
+         x="530.7403"
+         y="564.37115"
+         id="tspan18516">DataOut (BLUE)</tspan><tspan
          sodipodi:role="line"
-         x="625.87933"
-         y="596.91571"
-         id="tspan18518">GND</tspan><tspan
+         x="530.7403"
+         y="598.61462"
+         id="tspan18518">GND (BLACK/BROWN)</tspan><tspan
          sodipodi:role="line"
-         x="625.87933"
-         y="631.15912"
-         id="tspan18520">POWER_CTL / switched12V</tspan></text>
+         x="530.7403"
+         y="632.85803"
+         id="tspan18520">POWER_CTL / switched12V (RED)</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:20px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -2210,5 +2192,17 @@
            x="244.45691"
            sodipodi:role="line" /></text>
     </g>
+    <text
+       xml:space="preserve"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.5px;line-height:100%;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       x="180.08458"
+       y="405.07706"
+       id="text4581"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         id="tspan4583"
+         x="180.08458"
+         y="405.07706"
+         style="font-size:40px">VWCDPIC THT ASSEMBLY PLAN</tspan></text>
   </g>
 </svg>
