@@ -15,7 +15,9 @@ for ipod support look <a href="https://web.archive.org/web/20090427105500/http:/
 <a href="https://web.archive.org/web/20090427105500/http://www.k9spud.com/vwcdpic/devel/vwcdpic3/flash/ipod-vw-2.2/ipod-vw-2.2.ConcertII_G5-3.x.asm">iPod-VW Firmware v2.2-Concert II Source Code</a> - Use this for iPod 4G/5G remote control support on Audi Concert II head units 
 
 
-assemble plan generated using <a href="https://github.com/openscopeproject/InteractiveHtmlBom">InteractiveHtmlBom</a> is <a href="https://tomaskovacik.github.io/vwcdpic/hw/bom/ibom.html">here</a>
+assemble plan for SMD version generated using <a href="https://github.com/openscopeproject/InteractiveHtmlBom">InteractiveHtmlBom</a> is <a href="https://tomaskovacik.github.io/vwcdpic/hw/bom/ibom.html">here</a>
+
+assemble plan for THT version generated using <a href="https://github.com/openscopeproject/InteractiveHtmlBom">InteractiveHtmlBom</a> is <a href="https://tomaskovacik.github.io/vwcdpic/hw/bom_THT/ibom.html">here</a>
 
 notes:
 -------
