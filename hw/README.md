@@ -1,6 +1,6 @@
 HW part of vwcdpic project
 
-- made in kicad http://kicad-pcb.org
+- made in kicad http://kicad.org
 - smd version
 - tht version for home manufacture
 - for better audio input level, build preamplifier: https://github.com/tomaskovacik/hw/tree/master/kicad/audio_preamplifier
