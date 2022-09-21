@@ -6,6 +6,8 @@
 
   (title_block
     (date "12 mar 2014")
+    (rev "1")
+    (comment 1 "(C) Tomas Kovacik")
   )
 
   (lib_symbols
