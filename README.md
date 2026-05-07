@@ -29,7 +29,7 @@ notes:
 	- audi concert 1(philips)
 	- audi concert 2
 	- chorus1(blaupunkt)
-	- Symohony I
+	- Symphony I
 	- vw blaupunkt RadioNavigationSystem MCD
 	- VW Passat Blaupunkt Gamma (similar to Gamma V)
 	- Audi Symphony II BOSE
